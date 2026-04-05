@@ -1,0 +1,107 @@
+  /* Northgard Asset Gallery Styles */                                                                                                                                                                                                       
+                                                                                                                                                                                                                                             
+    .gallery-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #33475c; /* Lighter border color */
+    }
+
+    .gallery-header h1 {
+        font-size: 2.5rem;
+        /* Updated Header Color: You can change #e94560 to any hex color */
+        color: #e94560;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+        color: #ffffff; /* Changed to White */
+        font-size: 1.1rem;
+    }
+
+    .series-title {
+        font-size: 1.8rem;
+        /* Updated Header Color */
+        color: #ffffff;
+        margin: 2rem 0 1rem 0;
+        padding: 0.5rem;
+        background: linear-gradient(90deg, #232f42, #364558); /* Lighter background */
+        border-radius: 8px;
+        border-left: 4px solid #e94560;
+    }
+
+    .images-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .image-card {
+        /* Changed from #16213e to lighter blue-grey */
+        background: #232f42;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(233, 69, 96, 0.3);
+    }
+
+    .image-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-info {
+        padding: 0.75rem;
+        background: #2c3e50; /* Lighter inner card background */
+    }
+
+    .image-info h3 {
+        font-size: 0.9rem;
+        color: #ffffff; /* Changed header inside card to white */
+        margin-bottom: 0.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .image-info p {
+        font-size: 0.7rem;
+        color: #240808; /* Changed meta text to white */
+    }
+
+    .image-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.65rem;
+        color: #b0b0b0; /* Lighter text for meta details */
+    }
+
+    .gallery-footer {
+        margin-top: 3rem;
+        padding: 1rem;
+        text-align: center;
+        border-top: 1px solid #33475c; /* Lighter footer border */
+    }
+
+    .gallery-footer p {
+        font-size: 0.85rem;
+        color: #ffffff; /* Changed footer text to white */
+    }
+
+    .clan-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        width: 100%;
+    }

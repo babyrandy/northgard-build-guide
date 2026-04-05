@@ -1,0 +1,16 @@
+Base Theme:
+Background Main: #0F1115
+Secondary Background: #1A1D24
+Primary Text: #E6EAF0
+Secondary Text: #A8B0BD
+Borders/Dividers: #2A2F3A
+
+Clan Colors:
+Clear Clans: #E05A5A
+Econ Clans: #4FAF7C
+Scout Clans: #5FA8E0
+
+Optional Accents:
+Gold Accent: #D4B96E
+Hover Highlight: #2C3340
+Active Selection Glow: rgba(95, 168, 224, 0.15)

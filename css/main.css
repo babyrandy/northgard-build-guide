@@ -1,0 +1,786 @@
+/* ============================================================
+   NORTHGARD BUILD GUIDE — THEME v2
+   Design System: Dark Tactical / Norse Codex
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Backgrounds */
+  --bg-main:        #0F1115;
+  --bg-secondary:   #1A1D24;
+  --bg-card:        #151820;
+  --bg-card-hover:  #1E2230;
+
+  /* Text */
+  --text-primary:   #E6EAF0;
+  --text-secondary: #A8B0BD;
+  --text-muted:     #5C6370;
+
+  /* Borders */
+  --border:         #2A2F3A;
+  --border-strong:  #3A4050;
+
+  /* Clan Category Colors */
+  --clan-combat:    #E05A5A;
+  --clan-econ:      #4FAF7C;
+  --clan-scout:     #5FA8E0;
+  --clan-support:   #6319ee;
+  --clan-carry:     #f0d90b;
+  --clan-military:  #eb8a0c;
+
+  /* Accents */
+  --gold:           #D4B96E;
+  --gold-dim:       rgba(212, 185, 110, 0.15);
+  --gold-glow:      rgba(212, 185, 110, 0.08);
+  --hover-bg:       #2C3340;
+  --active-glow:    rgba(95, 168, 224, 0.15);
+
+  /* Semantic */
+  --danger:         #8b2020;
+
+  /* Typography Scale */
+  --font-display:   'Cinzel Decorative', 'Cinzel', serif;
+  --font-heading:   'Cinzel', serif;
+  --font-body:      'Crimson Pro', Georgia, serif;
+
+  /* Spacing */
+  --radius-sm:      4px;
+  --radius-md:      8px;
+  --radius-lg:      12px;
+
+  /* Transitions */
+  --transition:     0.25s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+  font-size: 1.05rem;
+  /* Subtle Norse knot texture via CSS */
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(95, 168, 224, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(212, 185, 110, 0.04) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(42, 47, 58, 0.18) 40px,
+      rgba(42, 47, 58, 0.18) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(42, 47, 58, 0.1) 40px,
+      rgba(42, 47, 58, 0.1) 41px
+    );
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================
+   SITE HEADER
+   ============================================================ */
+.main-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* faint top rune strip */
+  box-shadow: 0 1px 0 var(--border), 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.main-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 2rem;
+}
+
+.brand h1 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+
+.brand h1::before {
+  content: "⚔ ";
+  font-family: sans-serif;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Nav */
+.main-nav ul {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.main-nav a:hover {
+  color: var(--gold);
+  border-color: var(--border-strong);
+  background: var(--hover-bg);
+}
+
+/* Mobile toggle */
+.mobile-toggle {
+  display: none;
+}
+
+.mobile-toggle button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.mobile-toggle button:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 5rem 2rem 4.5rem;
+  background:
+    linear-gradient(180deg,
+      rgba(15, 17, 21, 0) 0%,
+      rgba(26, 29, 36, 0.6) 100%
+    ),
+    var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Large decorative rune watermark */
+.hero::before {
+  content: "ᚠᚢᚦᚨᚱᚲ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9rem;
+  letter-spacing: 1.5rem;
+  color: var(--gold);
+  opacity: 0.04;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Gold corner ornaments */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 1.5rem;
+  border: 1px solid rgba(212, 185, 110, 0.08);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+}
+
+.hero h2 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.3rem;
+  text-shadow:
+    0 0 40px rgba(212, 185, 110, 0.25),
+    0 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.hero p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  letter-spacing: 0.05rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-main);
+  border-color: var(--gold);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--gold);
+  box-shadow: 0 0 20px var(--gold-dim);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-glow);
+}
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* Section label used above clan groups */
+.clan-section-label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.clan-section-label::before {
+  content: "//";
+  color: var(--gold);
+  margin-right: 0.6rem;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   LATEST CLANS SECTION
+   ============================================================ */
+.latest-clans {
+  padding: 4rem 0;
+}
+
+.latest-clans > .container > h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+
+.latest-clans > .container > h3::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 0.6rem;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   CLAN GRID
+   ============================================================ */
+.clan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.clan-grid li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover state */
+.clan-grid li a:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(212, 185, 110, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Subtle left accent line on hover */
+.clan-grid li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.clan-grid li a:hover::before {
+  opacity: 1;
+}
+
+/* Clan image */
+.clan-grid li img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  background: var(--bg-secondary); /* fallback while loading */
+}
+
+.clan-grid li a:hover img {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold-dim);
+}
+
+/* Card text */
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-info h4 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.08rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  transition: color var(--transition);
+}
+
+.clan-grid li a:hover .card-info h4 {
+  color: var(--gold);
+}
+
+/* Second badge hidden by default, slides in on card hover */
+.card-info h4 .role-badge:nth-child(3) {
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-color: transparent;
+  transition:
+    max-width 0.3s ease,
+    opacity 0.25s ease,
+    padding 0.3s ease,
+    border-color 0.25s ease;
+}
+
+.clan-grid li a:hover .card-info h4 .role-badge:nth-child(3) {
+  max-width: 6rem;
+  opacity: 1;
+  padding-left: 0.45em;
+  padding-right: 0.45em;
+  border-color: inherit;
+}
+
+.card-info p {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  /* Clamp to 2 lines by default using max-height */
+  max-height: calc(1.4em * 2);
+  overflow: hidden;
+  transition: max-height 0.35s ease, color 0.25s ease;
+}
+
+/* Expand on card hover */
+.clan-grid li a:hover .card-info p {
+  max-height: 10em;
+  color: var(--text-secondary);
+}
+
+/* Role badges */
+.role-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0.1em 0.45em;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  position: relative;
+  top: -1px;
+}
+
+.role-clear {
+  color: var(--clan-combat);
+  border-color: rgba(224, 90, 90, 0.35);
+  background: rgba(224, 90, 90, 0.07);
+}
+
+.role-econ {
+  color: var(--clan-econ);
+  border-color: rgba(79, 175, 124, 0.35);
+  background: rgba(79, 175, 124, 0.07);
+}
+
+.role-scout {
+  color: var(--clan-scout);
+  border-color: rgba(95, 168, 224, 0.35);
+  background: rgba(95, 168, 224, 0.06);
+}
+
+.role-support {
+  color: var(--clan-support);
+  border-color: rgba(61, 14, 233, 0.35);
+  background: rgba(95, 168, 224, 0.06);
+}
+
+.role-carry {
+  color: var(--clan-carry);
+  border-color: rgba(199, 202, 18, 0.35);
+  background: rgba(95, 168, 224, 0.06);
+}
+
+.role-military {
+  color: var(--clan-military);
+  border-color: rgba(197, 138, 11, 0.35);
+  background: rgba(95, 168, 224, 0.06);
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "ᛟ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16rem;
+  color: var(--gold);
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.cta-section p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.main-footer {
+  background: var(--bg-main);
+  border-top: 1px solid var(--border);
+  padding: 3rem 0 2rem;
+}
+
+.main-footer .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links h4 {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  align-self: flex-end;
+}
+
+/* ============================================================
+   FEATURE GRID (kept for other pages)
+   ============================================================ */
+/* .clan-row removed — layout is handled entirely by .clan-grid */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   ABOUT SECTION (kept for /about)
+   ============================================================ */
+.about {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   RUNE DECORATIONS (utility)
+   ============================================================ */
+.decorative-runes {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  opacity: 0.3;
+  position: absolute;
+  z-index: 0;
+}
+
+.rune-position { position: absolute; font-size: 1.5rem; }
+.rune-top-left     { top: 10%; left: 5%; }
+.rune-top-right    { top: 10%; right: 5%; }
+.rune-bottom-left  { bottom: 10%; left: 5%; }
+.rune-bottom-right { bottom: 10%; right: 5%; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .clan-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header .container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .hero::before {
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .clan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clan-grid li img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .main-footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .copyright {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
