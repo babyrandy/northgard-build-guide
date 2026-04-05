@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Northgard Build Guide — created by BabyRandy">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/interactions.js" defer></script>
+  <title>About — Northgard Build Guide</title>
+  <style>
+    /* ── About page styles ─────────────────────────────────── */
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+    .breadcrumb .container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .breadcrumb a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb .sep { opacity: 0.4; }
+    .breadcrumb .current { color: var(--text-secondary); }
+
+    /* Page hero */
+    .about-hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 4rem 2rem 3.5rem;
+      background:
+        linear-gradient(180deg,
+          rgba(15, 17, 21, 0) 0%,
+          rgba(26, 29, 36, 0.7) 100%
+        ),
+        var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-hero::before {
+      content: "ᚨᛒᛟᚢᛏ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      letter-spacing: 1.5rem;
+      color: var(--gold);
+      opacity: 0.04;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      inset: 1.5rem;
+      border: 1px solid rgba(212, 185, 110, 0.07);
+      border-radius: var(--radius-md);
+      pointer-events: none;
+    }
+    .about-hero h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      color: var(--gold);
+      letter-spacing: 0.3rem;
+      text-shadow: 0 0 40px rgba(212, 185, 110, 0.2), 0 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .about-hero p {
+      font-family: var(--font-body);
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      position: relative;
+    }
+
+    /* Main layout */
+    .about-layout {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Cards */
+    .about-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Gold left accent bar */
+    .about-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gold);
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+      opacity: 0.6;
+    }
+
+    .about-card-label {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-card-label::before {
+      content: "// ";
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    .about-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-card p {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+
+    .about-card p + p {
+      margin-top: 0.85rem;
+    }
+
+    /* Highlight inline name */
+    .about-card .name-highlight {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Support row */
+    .support-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .support-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14rem;
+      text-transform: uppercase;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid;
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .support-btn-ticket {
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+      background: transparent;
+    }
+    .support-btn-ticket:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-glow);
+    }
+
+    .support-btn-coffee {
+      color: var(--bg-main);
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+    .support-btn-coffee:hover {
+      background: transparent;
+      color: var(--gold);
+      box-shadow: 0 0 18px var(--gold-dim);
+    }
+
+    /* Purpose list */
+    .purpose-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .purpose-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .purpose-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      line-height: 1.85;
+    }
+
+    .purpose-item p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Divider rune */
+    .rune-divider {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--gold);
+      opacity: 0.25;
+      letter-spacing: 0.8rem;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .about-hero h2 { font-size: 1.9rem; }
+      .about-layout { padding: 2.5rem 1.25rem 4rem; }
+      .about-card { padding: 1.5rem 1.4rem; }
+      .support-row { flex-direction: column; }
+      .support-btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════ -->
+  <header class="main-header">
+    <div class="container">
+      <div class="brand">
+        <h1>Northgard: Build Guide</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ BREADCRUMB ═══════════════════════════════════════════ -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">About</span>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════════════ -->
+  <div class="about-hero">
+    <div class="container">
+      <h2>About This Guide</h2>
+      <p>Who made this, and why it exists</p>
+    </div>
+  </div>
+
+  <!-- ══ MAIN CONTENT ══════════════════════════════════════════ -->
+  <main>
+    <div class="about-layout">
+
+      <!-- Introduction -->
+      <div class="about-card">
+        <p class="about-card-label">Introduction</p>
+        <h3>Hail, Skald</h3>
+        <p>
+          Hello, my name is <span class="name-highlight">BabyRandy</span>. I enjoy Northgard and I want
+          others to enjoy it as much as I do. This site is my attempt to put solid, readable strategy
+          into one place — no walls of text, no outdated wikis, just clean build paths you can actually follow.
+        </p>
+        <p>
+          If you would like to support this project, you can put in a ticket so I can update or expand
+          a guide, or you can buy me a coffee to keep the longship sailing.
+        </p>
+
+        <div class="support-row">
+          <a href="#" class="support-btn support-btn-ticket">
+            📋 Submit a Ticket
+          </a>
+          <a href="#" class="support-btn support-btn-coffee">
+            ☕ Buy Me a Coffee
+          </a>
+        </div>
+      </div>
+
+      <div class="rune-divider">ᛟ ᚠ ᛟ</div>
+
+      <!-- Purpose -->
+      <div class="about-card">
+        <p class="about-card-label">Purpose</p>
+        <h3>Who This Is For</h3>
+        <p>
+          This guide is built for two kinds of players:
+        </p>
+        <div class="purpose-list">
+          <div class="purpose-item">
+            <span class="purpose-icon">⚔</span>
+            <p>
+              <strong style="color: var(--text-primary);">Experienced players</strong> looking to pick up
+              a new clan and understand its role, build order, and win conditions without having to piece
+              it together from forum posts and YouTube videos.
+            </p>
+          </div>
+          <div class="purpose-item">
+            <span class="purpose-icon">🛡</span>
+            <p>
+              <strong style="color: var(--text-primary);">New players</strong> just getting into the game
+              who want a straightforward starting point — something that explains how a clan is normally
+              played without overwhelming them with every edge case.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 1.25rem;">
+          These guides are intentionally simple. The goal is to lead you down the right path, not cover
+          every possible scenario. Once you understand the rhythm of a clan, you'll find your own line.
+        </p>
+      </div>
+
+      <div class="rune-divider">ᛟ ᚠ ᛟ</div>
+
+      <!-- Keep up to date -->
+      <div class="about-card">
+        <p class="about-card-label">Keeping It Current</p>
+        <h3>Help Shape the Guide</h3>
+        <p>
+          Northgard gets updated. Clans get rebalanced, new DLC drops, and metas shift. If you notice
+          something outdated, incorrect, or missing — submit a ticket and I'll get it looked at.
+          Community feedback is what keeps a guide like this worth reading.
+        </p>
+        <div class="support-row">
+          <a href="#" class="support-btn support-btn-ticket">
+            📋 Submit a Ticket
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
