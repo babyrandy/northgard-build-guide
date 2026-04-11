@@ -8,9 +8,8 @@
   <script src="../js/interactions.js" defer></script>
   <title>Lynx Clan Guide — Northgard Build Guide</title>
   <style>
-    /* ── Page-specific styles (lynx.html only) ─────────────────── */
+    /* ── Page-specific styles ─────────────────────────────────── */
 
-    /* Breadcrumb */
     .breadcrumb {
       padding: 0.85rem 0;
       border-bottom: 1px solid var(--border);
@@ -26,15 +25,11 @@
       text-transform: uppercase;
       color: var(--text-muted);
     }
-    .breadcrumb a {
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
+    .breadcrumb a { color: var(--text-muted); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--gold); }
     .breadcrumb .sep { opacity: 0.4; }
     .breadcrumb .current { color: var(--text-secondary); }
 
-    /* Clan hero banner */
     .clan-hero {
       background: var(--bg-secondary);
       border-bottom: 1px solid var(--border);
@@ -53,11 +48,7 @@
       opacity: 0.04;
       pointer-events: none;
     }
-    .clan-hero .container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+    .clan-hero .container { display: flex; align-items: center; gap: 2rem; }
     .clan-hero-img {
       width: 96px;
       height: 96px;
@@ -81,11 +72,7 @@
       color: var(--text-secondary);
       margin-bottom: 0.85rem;
     }
-    .clan-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .clan-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
       font-family: var(--font-heading);
       font-size: 0.65rem;
@@ -96,11 +83,10 @@
       border-radius: 3px;
       border: 1px solid;
     }
-    .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07);  }
-    .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07);   }
-    .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
+    .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07); }
+    .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07); }
+    .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent; }
 
-    /* Main layout */
     .guide-layout {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -109,11 +95,7 @@
       align-items: start;
     }
 
-    /* Sidebar TOC */
-    .guide-toc {
-      position: sticky;
-      top: 80px;
-    }
+    .guide-toc { position: sticky; top: 80px; }
     .toc-label {
       font-family: var(--font-heading);
       font-size: 0.65rem;
@@ -143,11 +125,7 @@
       border-left-color: var(--gold);
       background: var(--gold-glow);
     }
-    .toc-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0.75rem 0;
-    }
+    .toc-divider { border: none; border-top: 1px solid var(--border); margin: 0.75rem 0; }
     .toc-back {
       display: flex;
       align-items: center;
@@ -161,13 +139,8 @@
     }
     .toc-back:hover { color: var(--gold); background: var(--gold-glow); }
 
-    /* Year sections */
     .guide-content { min-width: 0; }
-
-    .year-section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 90px;
-    }
+    .year-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
 
     .year-header {
       display: flex;
@@ -198,7 +171,7 @@
       letter-spacing: 0.05rem;
       text-align: left;
     }
-    .year-header h2::after { display: none; } /* remove global underline */
+    .year-header h2::after { display: none; }
 
     .year-goal {
       font-family: var(--font-body);
@@ -212,7 +185,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Build step cards */
     .build-steps {
       display: flex;
       flex-direction: column;
@@ -230,10 +202,7 @@
       padding: 0.85rem 1rem;
       transition: border-color 0.2s, background 0.2s;
     }
-    .step:hover {
-      border-color: var(--border-strong);
-      background: var(--bg-card-hover);
-    }
+    .step:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
     .step-num {
       font-family: var(--font-heading);
       font-size: 0.72rem;
@@ -249,27 +218,10 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .step-body {}
-    .step-title {
-      font-family: var(--font-heading);
-      font-size: 0.88rem;
-      color: var(--text-primary);
-      margin-bottom: 0.2rem;
-    }
-    .step-desc {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    .step-title { font-family: var(--font-heading); font-size: 0.88rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .step-desc  { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
-    /* Resource chips */
-    .step-cost {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.4rem;
-    }
+    .step-cost { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
     .chip {
       font-family: var(--font-heading);
       font-size: 0.62rem;
@@ -285,7 +237,6 @@
     .chip-lore   { color: #a07dc9; border-color: rgba(160,125,201,0.3); background: rgba(160,125,201,0.07); }
     .chip-trophy { color: var(--clan-scout); border-color: rgba(95,168,224,0.3); background: rgba(95,168,224,0.07); }
 
-    /* Tip callout */
     .tip {
       display: flex;
       gap: 0.75rem;
@@ -295,20 +246,10 @@
       padding: 0.9rem 1rem;
       margin-top: 1rem;
     }
-    .tip-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      line-height: 1.5;
-    }
-    .tip p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
+    .tip-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.5; }
+    .tip p { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
     .tip strong { color: var(--clan-scout); }
 
-    /* Warning callout */
     .warn {
       display: flex;
       gap: 0.75rem;
@@ -318,21 +259,10 @@
       padding: 0.9rem 1rem;
       margin-top: 0.75rem;
     }
-    .warn p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
+    .warn p { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
     .warn strong { color: var(--clan-combat); }
 
-    /* Lore priority list */
-    .lore-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
+    .lore-list { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
     .lore-item {
       display: flex;
       align-items: center;
@@ -351,37 +281,81 @@
       text-align: right;
       flex-shrink: 0;
     }
-    .lore-name {
+    .lore-name { color: var(--text-primary); font-weight: 600; }
+
+    .section-rule { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+    /* ── Video section ───────────────────────────────────────── */
+    .video-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 90px;
+    }
+    .video-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
       color: var(--text-primary);
-      font-weight: 600;
+      margin: 0;
+      letter-spacing: 0.05rem;
     }
+    .video-section-header h2::after { display: none; }
 
-    /* Section divider */
-    .section-rule {
+    /* Responsive 16:9 container */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       border: none;
-      border-top: 1px solid var(--border);
-      margin: 3rem 0;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .video-placeholder-icon { font-size: 2.5rem; opacity: 0.25; }
+    .video-placeholder p {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .video-caption {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      text-align: center;
     }
 
-    /* Responsive */
     @media (max-width: 860px) {
-      .guide-layout {
-        grid-template-columns: 1fr;
-      }
-      .guide-toc {
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-      .guide-toc ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
+      .guide-layout { grid-template-columns: 1fr; }
+      .guide-toc { position: static; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+      .guide-toc ul { flex-direction: row; flex-wrap: wrap; }
       .guide-toc a { border-left: none; border-bottom: 2px solid transparent; }
-      .guide-toc a:hover,
-      .guide-toc a.active { border-bottom-color: var(--gold); border-left-color: transparent; }
+      .guide-toc a:hover, .guide-toc a.active { border-bottom-color: var(--gold); border-left-color: transparent; }
       .clan-hero .container { flex-direction: column; align-items: flex-start; }
       .clan-hero::before { display: none; }
     }
@@ -396,6 +370,12 @@
         <h1>Northgard: Build Guide</h1>
       </div>
       <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../economy/index.html">Economy</a></li>
+          <li><a href="../combat/index.html">Combat</a></li>
+          <li><a href="../about/index.html">About</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -414,11 +394,7 @@
   <!-- ══ CLAN HERO ═════════════════════════════════════════════ -->
   <div class="clan-hero">
     <div class="container">
-      <img
-        src="../assets/images/Lynx_round.webp"
-        alt="Lynx Clan"
-        class="clan-hero-img"
-      >
+      <img src="../assets/images/Lynx_round.webp" alt="Lynx Clan" class="clan-hero-img">
       <div class="clan-hero-text">
         <h1>Brundr &amp; Kaelinn — Lynx Clan</h1>
         <p class="subtitle">Led by Mielikki the Beastmaster · Masters of the Hunt</p>
@@ -445,6 +421,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -464,6 +441,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -474,30 +452,29 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Expand Out</div>
-                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins(Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
+                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins (Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">20 Food</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
                   <div class="step-title">Build House and/or Archery Range</div>
-                  <div class="step-desc">If you started with a ship wreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
+                  <div class="step-desc">If you started with a Shipwreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Recruiting Cats:</strong>Your Brundr &amp; Kaelinn costs 100 krowns and food TOTAL. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
-            </div>  
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
@@ -507,27 +484,30 @@
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
-              </div>  
+              </div>
+
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
                   <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
+                  <div class="step-desc">Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">Build Docks and second Woodcutter's Lodge</div>
+                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
@@ -538,16 +518,22 @@
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div><!-- /build-steps -->
+
+            <div class="tip">
+              <div class="tip-icon">🐾</div>
+              <p><strong>Recruiting Cats:</strong> Brundr &amp; Kaelinn cost 100 krowns and food total. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
+            </div>
             <div class="tip">
               <div class="tip-icon">🐾</div>
               <p><strong>Clearing priority:</strong> Clear non-mystical neutrals to get Caring Siblings and then Sibling Rivalry. Use Brundr &amp; Kaelinn for all clearing — keep your villagers on food and wood. Every animal the cats kill awards Hunting Trophies that unlock your Path of the Hunter upgrades.</p>
             </div>
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Build houses</strong> you want the population to convert 801-802.</p>
+              <p><strong>Build houses</strong> — you want the population headroom to convert in 801–802.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -563,39 +549,43 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
                   <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-desc">If you have 2+ coastal tiles, build a second dock for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-desc">Now go down the middle tree. The most important lores are Archery Mastery and Nimble Paws.</div>
                   <div class="step-cost">
                     <span class="chip chip-lore">Lore</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
                   <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
+                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding, clear for your teammates — you should be doing this as soon as you have your cats.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food per tile</span>
                     <span class="chip chip-trophy">Trophies passive</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Feast in November (unless a teammate covers it)</div>
                   <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
@@ -604,42 +594,43 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">6</div>
+                <div class="step-num">5</div>
                 <div class="step-body">
                   <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
+                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less. Get your Stone and Iron from Jord's Blessing.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                     <span class="chip chip-gold">Iron + Gold</span>
                   </div>
                 </div>
               </div>
-            <div class="Tip">
-              <p><strong>Get your Stone and Iron from Jord's Blessing.</strong></p>
-            </div>
+
               <div class="step">
-                <div class="step-num">7</div>
+                <div class="step-num">6</div>
                 <div class="step-body">
                   <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill with The Great Hunt.</div>
+                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill via The Great Hunt. Your first Tracker is always free with Archery Mastery.</div>
                   <div class="step-cost">
                     <span class="chip chip-gold">Free for 1</span>
                   </div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="tip">
               <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
+              <p><strong>Lore priority for 801:</strong></p>
               <div class="lore-list">
                 <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
+                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — First Tracker is always free; Archery Range upgrade cost –50%</div>
+                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> — +3 Happiness with warchief, +1 per upgraded military camp</div>
+                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> — Brundr &amp; Kaelinn gain +35% max health and frequently leap to dodge attacks</div>
               </div>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -655,6 +646,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -665,27 +657,41 @@
                   </div>
                 </div>
               </div>
-              </div>
+
               <div class="step">
-                <div class="step-num">3</div>
+                <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Your workers</div>
-                  <div class="step-desc">Build a Forge and schedule the upgrads of your Hunters, Trackers, and Sailors.<div>
+                  <div class="step-title">Upgrade Archery Range</div>
+                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Archery Mastery cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">Stone + Wood</span>
                   </div>
                 </div>
               </div>
+
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Upgrade your workers</div>
+                  <div class="step-desc">Build a Forge and schedule the upgrades of your Hunters, Trackers, and Sailors.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-wood">80 Wood</span>
+                    <span class="chip chip-gold">Iron + Gold</span>
+                  </div>
+                </div>
+              </div>
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
+                  <div class="step-title">Build second Stone Mine (if not under pressure)</div>
+                  <div class="step-desc">Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food and military rather than stretching economy.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
@@ -696,6 +702,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
@@ -706,12 +713,14 @@
                   </div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="tip">
               <div class="tip-icon">⚔</div>
               <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -727,6 +736,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -734,43 +744,38 @@
                   <div class="step-desc">Keep military camps upgraded and cycle gold income directly into maintaining this number. Trackers with full trophy upgrades are one of the strongest sustained ranged forces in the game at this point.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Upgrade Town Hall &amp; key buildings</div>
-                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802. The population growth speed lore (+25%) compounds well here.</div>
+                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Place Lynx Traps on enemy-adjacent neutral tiles</div>
-                  <div class="step-desc">Traps placed on unclaimed tiles near enemy borders passively generate trophies and can surprise enemies who push through those tiles. A subtle but effective harassment tool mid-game.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Trophy generation</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Continue feast cycle with teammates</div>
                   <div class="step-desc">After 200 Fame, each animal kill lowers your next feast cost. Coordinate with your team — if a Stag or Goat player feasts, stockpile food for tile colonization instead. If not, you feast and buff the whole team.</div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Use Kaelinn to clear Valkyries &amp; Draugr Tombs</div>
+                  <div class="step-title">Use Kaelinn &amp; Brundr to clear Valkyries &amp; Draugr Tombs</div>
                   <div class="step-desc">Kaelinn's mobility makes her excellent at taking down high-value neutral camps. If a camp is too strong for her alone, bring one Tracker for support. These camps drop significant resources and lore.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the movement speed upgrade</strong> for archers so you can kite and reposition groups in combat rather than standing and trading fire.</p>
+              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy axe throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the summoning upgrade</strong> for archers so you can pressure groups in combat rather than standing and trading fire.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -786,6 +791,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -796,6 +802,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
@@ -806,26 +813,70 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
                   <div class="step-title">Military surge with 14–18 Trackers</div>
-                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows and movement speed is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
+                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows, Double Shot, and kill summoning is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop.</div>
+                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop with a coordinated team.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="tip">
               <div class="tip-icon">🌿</div>
               <p><strong>Oskoreia timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege. The spirit animals are powerful but only last one engagement, so don't waste it on a minor skirmish.</p>
             </div>
+
+          </section>
+
+          <hr class="section-rule">
+
+          <!-- ── VIDEO GUIDE ────────────────────────────────── -->
+          <!--
+            ╔═══════════════════════════════════════════════════╗
+            ║  HOW TO ADD YOUR YOUTUBE VIDEO                    ║
+            ║                                                   ║
+            ║  1. Open the YouTube video in your browser        ║
+            ║  2. Look at the URL, e.g.:                        ║
+            ║     youtube.com/watch?v=dQw4w9WgXcQ              ║
+            ║  3. Copy just the ID after "v="                   ║
+            ║     → dQw4w9WgXcQ                                ║
+            ║  4. Paste it into the iframe src below,           ║
+            ║     replacing YOUR_VIDEO_ID_HERE                  ║
+            ║  5. Delete the video-placeholder div              ║
+            ╚═══════════════════════════════════════════════════╝
+          -->
+          <section class="video-section" id="video">
+            <div class="video-section-header">
+              <span class="year-badge">Video</span>
+              <h2>Video Guide</h2>
+            </div>
+
+            <div class="video-wrapper">
+
+              <iframe
+                src="https://www.youtube.com/embed/oBO8agjfugU"
+                title="Lynx Clan Guide Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+
+
+
+            </div>
+            <p class="video-caption">Video guide for Lynx Clan — build order, clearing routes, and endgame strategy.</p>
+
           </section>
 
         </div><!-- /guide-content -->
@@ -840,7 +891,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="../index.html">Clans</a></li>
-          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../about/index.html">About</a></li>
         </ul>
       </div>
     </div>
