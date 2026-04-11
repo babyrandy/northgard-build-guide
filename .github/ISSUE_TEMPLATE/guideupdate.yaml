@@ -1,0 +1,26 @@
+name: Support Ticket
+description: Submit a help request
+title: "[Support]: "
+labels: ["support"]
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (Discord or email)
+      placeholder: yourname#1234
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs updated?
+      placeholder: Describe your issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional details
+      placeholder: Anything else we should know?
