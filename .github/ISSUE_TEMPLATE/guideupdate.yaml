@@ -1,7 +1,7 @@
-name: Support Ticket
-description: Submit a help request
-title: "[Support]: "
-labels: ["support"]
+name: Update Ticket
+description: Submit an Update Request
+title: "[Guide Update]: "
+labels: ["update-request"]
 body:
   - type: input
     id: contact
