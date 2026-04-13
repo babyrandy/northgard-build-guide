@@ -6,7 +6,7 @@
   <meta name="description" content="Northgard Lynx Clan build guide - Year 800 to Year 804">
   <link rel="stylesheet" href="../css/main.css">
   <script src="../js/interactions.js" defer></script>
-  <title>Lynx Clan Guide — Northgard Build Guide</title>
+  <title>Rat Clan Guide — Northgard Build Guide</title>
   <style>
     /* ── Page-specific styles (lynx.html only) ─────────────────── */
 
@@ -96,9 +96,8 @@
       border-radius: 3px;
       border: 1px solid;
     }
-    .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07);  }
-    .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07);   }
-    .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
+    .tag-econ  { color: var(--clan-econ); border-color: rgba(79, 175, 124, 0.35); background: rgba(79, 175, 124, 0.07);}
+    .tag-military { color: var(--clan-military); border-color: rgba(197, 138, 11, 0.35); background: rgba(95, 168, 224, 0.06); }
 
     /* Main layout */
     .guide-layout {
@@ -385,6 +384,80 @@
       .clan-hero .container { flex-direction: column; align-items: flex-start; }
       .clan-hero::before { display: none; }
     }
+    /* ── Video section ───────────────────────────────────────── */
+    .video-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 90px;
+    }
+    .video-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: 0.05rem;
+    }
+    .video-section-header h2::after { display: none; }
+
+    /* Responsive 16:9 container */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .video-placeholder-icon { font-size: 2.5rem; opacity: 0.25; }
+    .video-placeholder p {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .video-caption {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .guide-layout { grid-template-columns: 1fr; }
+      .guide-toc { position: static; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+      .guide-toc ul { flex-direction: row; flex-wrap: wrap; }
+      .guide-toc a { border-left: none; border-bottom: 2px solid transparent; }
+      .guide-toc a:hover, .guide-toc a.active { border-bottom-color: var(--gold); border-left-color: transparent; }
+      .clan-hero .container { flex-direction: column; align-items: flex-start; }
+      .clan-hero::before { display: none; }
+    }    
   </style>
 </head>
 <body>
@@ -407,7 +480,7 @@
       <span class="sep">›</span>
       <a href="../index.html#clans">Clans</a>
       <span class="sep">›</span>
-      <span class="current">Lynx Clan</span>
+      <span class="current">Rat Clan</span>
     </div>
   </nav>
 
@@ -415,17 +488,16 @@
   <div class="clan-hero">
     <div class="container">
       <img
-        src="../assets/images/Lynx_round.webp"
-        alt="Lynx Clan"
+        src="../assets/images/Rat_round.webp"
+        alt="Rat Clan"
         class="clan-hero-img"
       >
       <div class="clan-hero-text">
-        <h1>Brundr &amp; Kaelinn — Lynx Clan</h1>
-        <p class="subtitle">Led by Mielikki the Beastmaster · Masters of the Hunt</p>
+        <h1>Dodsvagr — Rat Clan</h1>
+        <p class="subtitle">Led by Eir the Shaman</p>
         <div class="clan-tags">
-          <span class="tag tag-combat">Clear</span>
-          <span class="tag tag-combat">Military</span>
-          <span class="tag tag-dlc">DLC</span>
+          <span class="tag tag-econ">Econ</span>
+          <span class="tag tag-military">Military</span>
         </div>
       </div>
     </div>
@@ -445,6 +517,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -457,10 +530,10 @@
           <section class="year-section" id="y800">
             <div class="year-header">
               <span class="year-badge">Year 800</span>
-              <h2>Foundation &amp; First Cats</h2>
+              <h2>Foundation &amp; Eir</h2>
             </div>
             <p class="year-goal">
-              Goal: Get Brundr &amp; Kaelinn on the map immediately, start clearing neutral tiles for Hunting Trophies, and establish food + wood income before winter hits.
+              Goal: Get Eir on the map immediately, start clearing neutral tiles to expand and get stone, and establish food + wood income before winter hits.
             </p>
 
             <div class="build-steps">
@@ -487,22 +560,22 @@
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House and/or Archery Range</div>
-                  <div class="step-desc">If you started with a ship wreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
+                  <div class="step-title">Build Food Buildings and Woodcutter's Lodges.</div>
+                  <div class="step-desc">Your population grows with how many buildings have been built. You NEED to constantly be building.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">80-130 Wood</span>
                   </div>
                 </div>
               </div>
             <div class="tip">
               <div class="tip-icon">🐾</div>
-              <p><strong>Recruiting Cats:</strong>Your Brundr &amp; Kaelinn costs 100 krowns and food TOTAL. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
+              <p><strong>Recruiting your Chief:</strong>150 Krowns is what you need to recruit Eir. Additionally you need 10 wounded villagers.</p>
             </div>  
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. Assign two villagers. Wood is needed for buildings throughout 801.</div>
+                  <div class="step-desc">Build a second Woodcutter's Lodge for more population. Focus on food production and building out.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
@@ -511,18 +584,28 @@
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
+                  <div class="step-title">First Lore and Shaman Camp</div>
+                  <div class="step-desc"> Build a Shaman Camp and take Sharp Axes. You'll want Healing Fire so you can Overwork as much as possible.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
+              <div class="tip">
+                <div class="tip-icon">🦌</div>
+                <p><strong>Lore priority summary for 801:</strong></p>
+                <div class="lore-list">
+                  <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Sharp Axes</span> +20% Wood production</div>
+                  <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Healing Fire</span> When Purification Pyre are burning, they heal nearby units outside combat. This effect is 50% less effective during Overwork.</div>
+                  <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Medicine</span> Increases your healing speed by 50%.</div>
+                  <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Overcrowding</span> You can place up to two buildings of the same type in a zone, except Defense Tower.</div>
+                </div>
+              </div>              
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">Build Docks/Trading Post</div>
+                  <div class="step-desc">You need 150 Krowns to summon Eir. If you don't have a Ruins or Shipwreck you'll need to start your economy early.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
@@ -531,10 +614,10 @@
               <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
-                  <div class="step-title">Summon Mielikki (if gold allows)</div>
-                  <div class="step-desc">If you can reach 100 gold before winter — via a nearby treasure chest, fox burrow, or dock — get Mielikki out in 800. She costs no iron, unlike most warchiefs.</div>
+                  <div class="step-title">Build a Stone Mine</div>
+                  <div class="step-desc">Shaman Camp Upgrades are <strong>ESSENTIAL.</strong> Mine in winter of 800 and don't stop.</div>
                   <div class="step-cost">
-                    <span class="chip chip-gold">100 Gold</span>
+                    <span class="chip chip-wood"> 60 Wood</span>
                   </div>
                 </div>
               </div>
@@ -542,11 +625,11 @@
 
             <div class="tip">
               <div class="tip-icon">🐾</div>
-              <p><strong>Clearing priority:</strong> Middle tile first, then right, then left. Use Brundr &amp; Kaelinn for all clearing — keep your villagers on food and wood. Every animal the cats kill awards Hunting Trophies that unlock your Path of the Hunter upgrades.</p>
+              <p><strong>Clearing priority:</strong> Killing Neutrals give you Pyre to heal your units.</p>
             </div>
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Upgrade 1 house</strong> you want the population to convert 801-802.</p>
+              <p><strong>Upgrade Town Hall</strong> your population grows rapidly and you want to build plenty of Shaman Camps and other Buildings.</p>
             </div>
           </section>
 
@@ -559,15 +642,15 @@
               <h2>Economy &amp; Reach 200 Fame</h2>
             </div>
             <p class="year-goal">
-              Goal: Hit 200 Fame as fast as possible to unlock the feast discount. Establish your krown economy and build out a sustainable mid-game.
+              Goal: Hit 200 Fame as fast as possible to unlock the Shamanic Care. Establish your krown economy and build out a sustainable mid-game.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-title">Build Longship Dock(s)/ Trading Post</div>
+                  <div class="step-desc">Longships can be good for Lore but you need lots of Krowns so you can go Marketplace. With Overcrowding build at least 2 Trading posts on the same tile.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
@@ -576,10 +659,10 @@
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-title">Scouting and Mining</div>
+                  <div class="step-desc">Start mining Iron. You'll want to upgrade your Merchants, Shaman and food producers. If you have enough Iron build Rat's relic.</div>
                   <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
+                    <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
@@ -587,55 +670,31 @@
                 <div class="step-num">3</div>
                 <div class="step-body">
                   <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
+                  <div class="step-desc">Expand toward wolf dens and deer tiles. If your team needs it clear them, the more you expand the harder your Shaman will scale when you're ready to convert.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food per tile</span>
-                    <span class="chip chip-trophy">Trophies passive</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Feast in November (unless a teammate covers it)</div>
-                  <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-food">Food varies</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc">Mielikki is weaker than most warchiefs — keep her alive with a healer nearby. Also needed to keep Brundr &amp; Kaelinn healthy during aggressive clearing pushes into harder camps.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
+                  <div class="step-title">Overwork Constantly</div>
+                  <div class="step-desc">As often as you can overwork. Convert 2-4 low villagers to Shaman once you've gotten Enrollment.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
-                  <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill.</div>
+                  <div class="step-title">More Stone</div>
+                  <div class="step-desc">If you have access to more stone nodes build more Mines. Even if you don't use it all you can trade it for good economy.</div>
                   <div class="step-cost">
-                    <span class="chip chip-gold">~300 Gold for 7</span>
+                    <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="tip">
-              <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
-              <div class="lore-list">
-                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
-              </div>
-            </div>
           </section>
 
           <hr class="section-rule">
@@ -644,79 +703,50 @@
           <section class="year-section" id="y802">
             <div class="year-header">
               <span class="year-badge">Year 802</span>
-              <h2>Full Tracker Convert &amp; Military Build-Up</h2>
+              <h2>Full Shaman Convert &amp; Military Build-Up</h2>
             </div>
             <p class="year-goal">
-              Goal: Mass convert Trackers, upgrade the Forge and Archery Range, and prepare to contest or rush enemy positions. This is your power window.
+              Goal: Mass convert Shamans, upgrade Shaman Camps and Food Buildings, and prepare to contest or rush enemy positions. This is your power window.
             </p>
 
-            <div class="build-steps">
-              <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-body">
-                  <div class="step-title">Convert up to 7 Trackers</div>
-                  <div class="step-desc">300 gold funds 7 Trackers. This is your primary military force. Their strength scales with Hunting Trophies accumulated, so if you've been clearing consistently, they hit significantly harder than generic units.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">300 Gold</span>
-                  </div>
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <div class="step-title">Build Forge &amp; upgrade tools</div>
+                <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
+                <div class="step-cost">
+                  <span class="chip chip-wood">80 Wood</span>
+                  <span class="chip chip-gold">Iron + Krowns</span>
                 </div>
               </div>
+            </div>
+            <div class="build-steps">
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
+                  <div class="step-title">Upgrade your Shaman Camps</div>
+                  <div class="step-desc">You should have plenty of Gold and Wood for upgrading. Get ready to attack the enemy. Your upkeep per year just became much more expensive so you want to finish out the game.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                    <span class="chip chip-gold">Iron + Gold</span>
+                    <span class="chip chip-gold">Krowns + Stone</span>
+                    <span class="chip chip-wood">Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Archery Range</div>
-                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
+                  <div class="step-title">Upgrade Food buildings and Woodcutters Lodge</div>
+                  <div class="step-desc">Upgrade 1 lodge and 1-2 Food buildings.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">Stone + Wood</span>
+                    <span class="chip chip-wood">Wood</span>
+                    <span class="chip chip-gold">Stone + Krowns</span>
                   </div>
                 </div>
               </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">5</div>
-                <div class="step-body">
-                  <div class="step-title">Build second Longship Dock + Altar</div>
-                  <div class="step-desc">A second dock accelerates gold income significantly. The Altar unlocks additional lore paths. At this point your economy should be stable enough to run both.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">Wood + Stone</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Rush Fire Arrows lore (aggressive build)</div>
-                  <div class="step-desc">If you're playing an aggressive rush build: go straight down the middle lore path, skip mining upgrades entirely, and prioritize Fire Arrows. Your Trackers become a much harder-hitting frontline threat.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div class="tip">
               <div class="tip-icon">⚔</div>
-              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
+              <p><strong>Rush vs. Scale decision point:</strong> 31 Population should be an easy reach by this point.<strong>11-14+</strong>Shaman Warband is what you're aiming for. You should be able to grind down any other military by this point.</p>
             </div>
           </section>
 
