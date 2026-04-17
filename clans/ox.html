@@ -8,9 +8,8 @@
   <script src="../js/interactions.js" defer></script>
   <title>Ox Clan Guide — Northgard Build Guide</title>
   <style>
-    /* ── Page-specific styles (lynx.html only) ─────────────────── */
+    /* ── Page-specific styles ─────────────────────────────────── */
 
-    /* Breadcrumb */
     .breadcrumb {
       padding: 0.85rem 0;
       border-bottom: 1px solid var(--border);
@@ -26,15 +25,11 @@
       text-transform: uppercase;
       color: var(--text-muted);
     }
-    .breadcrumb a {
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
+    .breadcrumb a { color: var(--text-muted); transition: color 0.2s; }
     .breadcrumb a:hover { color: var(--gold); }
     .breadcrumb .sep { opacity: 0.4; }
     .breadcrumb .current { color: var(--text-secondary); }
 
-    /* Clan hero banner */
     .clan-hero {
       background: var(--bg-secondary);
       border-bottom: 1px solid var(--border);
@@ -43,21 +38,17 @@
       overflow: hidden;
     }
     .clan-hero::before {
-      content: "ᛚ";
+      content: "ᛟ";
       position: absolute;
       right: 3rem;
       top: 50%;
       transform: translateY(-50%);
       font-size: 14rem;
-      color: var(--clan-scout);
+      color: var(--clan-econ);
       opacity: 0.04;
       pointer-events: none;
     }
-    .clan-hero .container {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+    .clan-hero .container { display: flex; align-items: center; gap: 2rem; }
     .clan-hero-img {
       width: 96px;
       height: 96px;
@@ -81,11 +72,7 @@
       color: var(--text-secondary);
       margin-bottom: 0.85rem;
     }
-    .clan-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .clan-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
       font-family: var(--font-heading);
       font-size: 0.65rem;
@@ -96,11 +83,9 @@
       border-radius: 3px;
       border: 1px solid;
     }
+    .tag-econ  { color: var(--clan-econ);  border-color: rgba(79,175,124,0.35);  background: rgba(79,175,124,0.07); }
+    .tag-carry { color: var(--clan-carry); border-color: rgba(199,202,18,0.35);  background: rgba(240,217,11,0.07); }
 
-    .tag-econ { color: var(--clan-econ); border-color: rgba(79, 175, 124, 0.35);  background: rgba(79, 175, 124, 0.07);}
-    .tag-carry { color: var(--clan-carry); border-color: rgba(199, 202, 18, 0.35); background: rgba(95, 168, 224, 0.06);}
-
-    /* Main layout */
     .guide-layout {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -109,11 +94,7 @@
       align-items: start;
     }
 
-    /* Sidebar TOC */
-    .guide-toc {
-      position: sticky;
-      top: 80px;
-    }
+    .guide-toc { position: sticky; top: 80px; }
     .toc-label {
       font-family: var(--font-heading);
       font-size: 0.65rem;
@@ -143,11 +124,7 @@
       border-left-color: var(--gold);
       background: var(--gold-glow);
     }
-    .toc-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0.75rem 0;
-    }
+    .toc-divider { border: none; border-top: 1px solid var(--border); margin: 0.75rem 0; }
     .toc-back {
       display: flex;
       align-items: center;
@@ -161,13 +138,8 @@
     }
     .toc-back:hover { color: var(--gold); background: var(--gold-glow); }
 
-    /* Year sections */
     .guide-content { min-width: 0; }
-
-    .year-section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 90px;
-    }
+    .year-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
 
     .year-header {
       display: flex;
@@ -198,7 +170,7 @@
       letter-spacing: 0.05rem;
       text-align: left;
     }
-    .year-header h2::after { display: none; } /* remove global underline */
+    .year-header h2::after { display: none; }
 
     .year-goal {
       font-family: var(--font-body);
@@ -212,7 +184,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Build step cards */
     .build-steps {
       display: flex;
       flex-direction: column;
@@ -230,10 +201,7 @@
       padding: 0.85rem 1rem;
       transition: border-color 0.2s, background 0.2s;
     }
-    .step:hover {
-      border-color: var(--border-strong);
-      background: var(--bg-card-hover);
-    }
+    .step:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
     .step-num {
       font-family: var(--font-heading);
       font-size: 0.72rem;
@@ -249,27 +217,10 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .step-body {}
-    .step-title {
-      font-family: var(--font-heading);
-      font-size: 0.88rem;
-      color: var(--text-primary);
-      margin-bottom: 0.2rem;
-    }
-    .step-desc {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    .step-title { font-family: var(--font-heading); font-size: 0.88rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .step-desc  { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
-    /* Resource chips */
-    .step-cost {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.4rem;
-    }
+    .step-cost { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
     .chip {
       font-family: var(--font-heading);
       font-size: 0.62rem;
@@ -279,13 +230,13 @@
       border-radius: 3px;
       border: 1px solid;
     }
-    .chip-food   { color: #7dc77d; border-color: rgba(125,199,125,0.3); background: rgba(125,199,125,0.07); }
-    .chip-gold   { color: var(--gold); border-color: rgba(212,185,110,0.3); background: rgba(212,185,110,0.06); }
-    .chip-wood   { color: #b8945a; border-color: rgba(184,148,90,0.3); background: rgba(184,148,90,0.07); }
-    .chip-lore   { color: #a07dc9; border-color: rgba(160,125,201,0.3); background: rgba(160,125,201,0.07); }
-    .chip-trophy { color: var(--clan-scout); border-color: rgba(95,168,224,0.3); background: rgba(95,168,224,0.07); }
+    .chip-food  { color: #7dc77d; border-color: rgba(125,199,125,0.3); background: rgba(125,199,125,0.07); }
+    .chip-gold  { color: var(--gold); border-color: rgba(212,185,110,0.3); background: rgba(212,185,110,0.06); }
+    .chip-wood  { color: #b8945a; border-color: rgba(184,148,90,0.3); background: rgba(184,148,90,0.07); }
+    .chip-stone { color: #9aabb8; border-color: rgba(154,171,184,0.3); background: rgba(154,171,184,0.07); }
+    .chip-iron  { color: #c0c0c0; border-color: rgba(192,192,192,0.3); background: rgba(192,192,192,0.07); }
+    .chip-lore  { color: #a07dc9; border-color: rgba(160,125,201,0.3); background: rgba(160,125,201,0.07); }
 
-    /* Tip callout */
     .tip {
       display: flex;
       gap: 0.75rem;
@@ -295,20 +246,10 @@
       padding: 0.9rem 1rem;
       margin-top: 1rem;
     }
-    .tip-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      line-height: 1.5;
-    }
-    .tip p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
+    .tip-icon { font-size: 1.1rem; flex-shrink: 0; line-height: 1.5; }
+    .tip p { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
     .tip strong { color: var(--clan-scout); }
 
-    /* Warning callout */
     .warn {
       display: flex;
       gap: 0.75rem;
@@ -318,21 +259,10 @@
       padding: 0.9rem 1rem;
       margin-top: 0.75rem;
     }
-    .warn p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
+    .warn p { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
     .warn strong { color: var(--clan-combat); }
 
-    /* Lore priority list */
-    .lore-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
+    .lore-list { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
     .lore-item {
       display: flex;
       align-items: center;
@@ -351,45 +281,12 @@
       text-align: right;
       flex-shrink: 0;
     }
-    .lore-name {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
+    .lore-name { color: var(--text-primary); font-weight: 600; }
 
-    /* Section divider */
-    .section-rule {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 3rem 0;
-    }
+    .section-rule { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
 
-    /* Responsive */
-    @media (max-width: 860px) {
-      .guide-layout {
-        grid-template-columns: 1fr;
-      }
-      .guide-toc {
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-      .guide-toc ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .guide-toc a { border-left: none; border-bottom: 2px solid transparent; }
-      .guide-toc a:hover,
-      .guide-toc a.active { border-bottom-color: var(--gold); border-left-color: transparent; }
-      .clan-hero .container { flex-direction: column; align-items: flex-start; }
-      .clan-hero::before { display: none; }
-    }
-        /* ── Video section ───────────────────────────────────────── */
-    .video-section {
-      margin-bottom: 3rem;
-      scroll-margin-top: 90px;
-    }
+    /* ── Video section ─────────────────────────────────────── */
+    .video-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
     .video-section-header {
       display: flex;
       align-items: center;
@@ -406,8 +303,6 @@
       letter-spacing: 0.05rem;
     }
     .video-section-header h2::after { display: none; }
-
-    /* Responsive 16:9 container */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -473,7 +368,7 @@
         <ul>
           <li><a href="../index.html">Clans</a></li>
           <li><a href="../about/about.html">About</a></li>
-        </ul>        
+        </ul>
       </nav>
     </div>
   </header>
@@ -492,11 +387,7 @@
   <!-- ══ CLAN HERO ═════════════════════════════════════════════ -->
   <div class="clan-hero">
     <div class="container">
-      <img
-        src="../assets/images/Ox_round.webp"
-        alt="Ox Clan"
-        class="clan-hero-img"
-      >
+      <img src="../assets/images/Ox_round.webp" alt="Ox Clan" class="clan-hero-img">
       <div class="clan-hero-text">
         <h1>Himminbrjotir — Ox Clan</h1>
         <p class="subtitle">Led by Torfinn the Hero</p>
@@ -542,6 +433,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -552,83 +444,92 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Expand Out</div>
-                  <div class="step-desc">Only expand out to 1-2 tile. You want Colonization before expanding far.</div>
+                  <div class="step-desc">Only expand out to 1–2 tiles. You want Colonization before expanding far.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">20 Food</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🌿</div>
-              <p><strong>Lore Choice:</strong> You want Colonization as soon as possible to expand early game. Rely on your clear clan to keep neutrals off your back.</p>
-              </div>
-            </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House, Wood Cutters Lodge, and another Scout Camp</div>
-                  <div class="step-desc">If you started with a ship wreck you can hold off on a Wood Cutters and immediately build a Mines on an Iron tile. Build a House so your population can continue to expand.</div>
+                  <div class="step-title">Build House, Woodcutter's Lodge, and another Scout Camp</div>
+                  <div class="step-desc">If you started with a Shipwreck you can hold off on a Woodcutter's and immediately build a Mine on an Iron tile. Build a House so your population can continue to expand.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">100 Wood</span><span class="chip chip-gold"> 10 Gold</span>
+                    <span class="chip chip-wood">100 Wood</span>
+                    <span class="chip chip-gold">10 Gold</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Mining Ores:</strong>You want to find a dwarven camp ASAP. If you don't have one you'll need to build and operate your own mines.</p>
-            </div>  
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. You'll want 3 Woodcutters Lodges for your expansion.</div>
+                  <div class="step-desc">Delay this until you have around 80 Wood remaining. You'll want 3 Woodcutter's Lodges for your expansion — Ox is wood hungry.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
-              </div>  
+              </div>
+
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Food buildings</div>
-                  <div class="step-desc"> Build your Food building. Get Sharp Axes.</div>
+                  <div class="step-title">First Lore and Food Buildings</div>
+                  <div class="step-desc">Build your food building and take Sharp Axes as your first lore.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Set 3 scouts on the Dwarves</div>
+                  <div class="step-title">Set 3 Scouts on the Dwarves</div>
                   <div class="step-desc">Start building relations with them immediately. You want their operatives and Ores.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
                   <div class="step-title">Infrastructure</div>
-                  <div class="step-desc">Build up your Infrastructure. Ox is Wood hungry so have at least 3 Woodcutters Lodges. If you can, build 3 Longship docks for the Lore. Otherwise build 2-3 Trading Posts to build up your economy.</div>
+                  <div class="step-desc">Build up your infrastructure. If you can, build 3 Longship Docks for the Lore. Otherwise build 2–3 Trading Posts to build up your economy.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">160 Wood</span>
                   </div>
                 </div>
               </div>
+
+            </div><!-- /build-steps -->
+
+            <div class="tip">
+              <div class="tip-icon">🌿</div>
+              <p><strong>Lore Choice:</strong> You want Colonization as soon as possible to expand early game. Rely on your clear clan to keep neutrals off your back.</p>
+            </div>
+            <div class="tip">
+              <div class="tip-icon">⛏</div>
+              <p><strong>Mining Ores:</strong> You want to find a Dwarven Camp ASAP. If you don't have one nearby you'll need to build and operate your own Mines.</p>
             </div>
             <div class="tip">
               <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
+              <p><strong>Lore priority for 800:</strong></p>
               <div class="lore-list">
-                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Sharp Axes</span> — +20% Wood production.</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Colonization</span> — Reduce the amount of food needed to colonize by 30%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">City Builder</span> — Impoving a zone is 50% cheaper. Specialized units get 10% production increase and -50% upkeep</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Weaponsmith</span> — +20% to all military units attack.</div>
+                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Sharp Axes</span> — +20% Wood production</div>
+                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Colonization</span> — Reduce food needed to colonize by 30%</div>
+                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">City Builder</span> — Improving a zone is 50% cheaper; specialized units get +10% production and –50% upkeep</div>
+                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
               </div>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -637,71 +538,78 @@
           <section class="year-section" id="y801">
             <div class="year-header">
               <span class="year-badge">Year 801</span>
-              <h2>Economy &amp; Reach friendship with Dwarves</h2>
+              <h2>Economy &amp; Friendship with the Dwarves</h2>
             </div>
             <p class="year-goal">
-              Goal: Get dwarves so you can mine and forge quicker. 
+              Goal: Get Dwarves so you can mine and forge quicker.
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Krowns/Build Military camps</div>
-                  <div class="step-desc"> If you have 3 shorelines build solely Longship Docks. Otherwise build at least 1 Trading Post and 1 of each of the Military Buildings.</div>
+                  <div class="step-title">Build Krowns &amp; Military Camps</div>
+                  <div class="step-desc">If you have 3 shorelines build solely Longship Docks. Otherwise build at least 1 Trading Post and 1 of each of the Military Buildings.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Future Lore &amp; Forge</div>
+                  <div class="step-title">Continue Lore &amp; Build Forge</div>
                   <div class="step-desc">You will now go down the middle tree. Build a Forge.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Colonize aggressively</div>
-                  <div class="step-desc"> Look to get your Chief out. If you have a clear clan expand towards Wolf Dens.</div>
+                  <div class="step-title">Colonize Aggressively</div>
+                  <div class="step-desc">Look to get your Chief out. If you have a clear clan, expand toward Wolf Dens.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food per tile</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Forging Upgrades and Begin Relic</div>
-                  <div class="step-desc">First queue up Merchants/Sailors & Food production. Leadership is the military path you want to take to benefit off of all the forging. Your relic will make it so the enemy will only target Torfinn, this is a game changer.</div>
+                  <div class="step-desc">First queue up Merchants/Sailors &amp; food production upgrades. Leadership is the military path you want — it benefits off all the forging. Your relic will make the enemy target only Torfinn, which is a game changer.</div>
                   <div class="step-cost">
                     <span class="chip chip-gold">Iron + Krowns</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">6</div>
+                <div class="step-num">5</div>
                 <div class="step-body">
                   <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc"> You want to keep your Warrior healthy.</div>
+                  <div class="step-desc">You want to keep your Warriors healthy throughout engagements.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">7</div>
+                <div class="step-num">6</div>
                 <div class="step-body">
                   <div class="step-title">Go to Ancient Battlegrounds</div>
                   <div class="step-desc">Torfinn gains bonuses based on how many Battlegrounds he digs up. Start clearing neutrals to increase your military experience.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
           </section>
 
@@ -718,6 +626,7 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
@@ -728,49 +637,57 @@
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">3</div>
+                <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Upgrade Food Buildings</div>
-                  <div class="step-desc">Upgrading your food will allow you to assign 2 Villagers. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
+                  <div class="step-desc">Upgrading your food buildings allows you to assign 2 villagers per building, increasing output significantly.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">Stone + Wood</span>
+                    <span class="chip chip-stone">Stone</span>
+                    <span class="chip chip-wood">Wood</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">4</div>
+                <div class="step-num">3</div>
                 <div class="step-body">
                   <div class="step-title">Mine Stone and Iron</div>
                   <div class="step-desc">Continue to mine as much as possible. Your Dwarves should always be at work.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-iron">Iron</span>
+                    <span class="chip chip-stone">Stone</span>
+                  </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Think about Alter/Military</div>
-                  <div class="step-desc"> If you have access to 3 stone think about Altar of Kings. Otherwise upgrade Military buildings.</div>
+                  <div class="step-title">Altar of Kings or Military Upgrades</div>
+                  <div class="step-desc">If you have access to 3 stone think about Altar of Kings. Otherwise upgrade Military buildings.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">Wood + Stone</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">6</div>
+                <div class="step-num">5</div>
                 <div class="step-body">
                   <div class="step-title">Fight &amp; Find Battlegrounds</div>
-                  <div class="step-desc">Look to press the attack, your Chief (even with 1 Equipment) is a monster in battle. When Ancient Battlegrounds appear go straight for them. Your warriors are still scary on their own with Ferocious Charge.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
-                  </div>
+                  <div class="step-desc">Look to press the attack — your Chief (even with 1 Equipment) is a monster in battle. When Ancient Battlegrounds appear go straight for them. Your warriors are still scary on their own with Ferocious Charge.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="tip">
               <div class="tip-icon">⚔</div>
-              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
+              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), push early with Torfinn leading. If you have space to scale, keep building Battleground stacks and convert more Warriors before your first major engagement.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -786,33 +703,38 @@
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Sustain 10+ Warriors in warband</div>
-                  <div class="step-desc">You'll usually have less villagers than other clans. Look to have a large healthy warband of 10+ Warriors.</div>
+                  <div class="step-title">Sustain 10+ Warriors in Warband</div>
+                  <div class="step-desc">You'll usually have fewer villagers than other clans. Look to maintain a large, healthy warband of 10+ Warriors at all times.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Press the Attack and 500 Fame</div>
-                  <div class="step-desc">Upgrade buildings and colonize zones to get 500 fame. You'll be able to destroy buildings and press the attack hard by this point.</div>
+                  <div class="step-title">Press the Attack and Reach 500 Fame</div>
+                  <div class="step-desc">Upgrade buildings and colonize zones to hit 500 Fame. You'll be able to destroy buildings and press the attack hard by this point.</div>
                 </div>
               </div>
+
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Use Kaelinn to clear Valkyries &amp; Draugr Tombs</div>
-                  <div class="step-desc">Kaelinn's mobility makes her excellent at taking down high-value neutral camps. If a camp is too strong for her alone, bring one Tracker for support. These camps drop significant resources and lore.</div>
+                  <div class="step-title">Continue Feast Cycle</div>
+                  <div class="step-desc">Coordinate with your team on feasts. Happiness bonuses keep your population growing and support faster warrior conversion to replace losses.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out range your Warriors and attack very quickly. <strong>Use Torfinn's Taunt:</strong> The enemy will be helpless for the first 6 seconds of an engagement. Make sure you use this ability in a decisive battle.</p>
+              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy axe throwers out-range your Warriors and attack very quickly. <strong>Use Torfinn's Taunt</strong> — the enemy will be helpless for the first 6 seconds of an engagement. Save this for a decisive battle.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -824,59 +746,50 @@
               <h2>500 Fame — The True Hero &amp; Endgame</h2>
             </div>
             <p class="year-goal">
-              Goal: Reach 500 Fame to unlock Torfinn's Building Destruction.
+              Goal: Reach 500 Fame to unlock Torfinn's Building Destruction and close out the game.
             </p>
 
             <div class="build-steps">
+
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Unlock The True Hero. (500 Fame milestone)</div>
-                  <div class="step-desc">If you haven't already this will allow you to quickly reach the enemy backline if you're fighting in their territory. Combo this ability with the Taunt.</div>
+                  <div class="step-title">Unlock The True Hero (500 Fame milestone)</div>
+                  <div class="step-desc">If you haven't already, this allows you to quickly reach the enemy backline when fighting in their territory. Combo this ability with the Taunt for a devastating opening.</div>
                   <div class="step-cost">
-                    <span class="chip chip-trophy">500 Fame</span>
+                    <span class="chip chip-lore">500 Fame</span>
                   </div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Military surge with 14–16 Warriors</div>
-                  <div class="step-desc">You shouldn't be going past 804 so going into a deficit is completely fine.</div>
+                  <div class="step-title">Military Surge with 14–16 Warriors</div>
+                  <div class="step-desc">You shouldn't be going past 804 so going into a deficit is completely fine. Spend everything on your final push.</div>
                 </div>
               </div>
+
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Ox wins most naturally via Dominion. Keep pushing to cripple the other team's economy.</div>
+                  <div class="step-title">Push for Victory Condition</div>
+                  <div class="step-desc">Ox wins most naturally via Dominion. Keep pushing to cripple the enemy team's economy and hold their territory.</div>
                 </div>
               </div>
-            </div>
+
+            </div><!-- /build-steps -->
 
             <div class="tip">
-              <div class="tip-icon">🌿</div>
+              <div class="tip-icon">🐂</div>
               <p><strong>Aegir timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
 
           <!-- ── VIDEO GUIDE ────────────────────────────────── -->
-          <!--
-            ╔═══════════════════════════════════════════════════╗
-            ║  HOW TO ADD YOUR YOUTUBE VIDEO                    ║
-            ║                                                   ║
-            ║  1. Open the YouTube video in your browser        ║
-            ║  2. Look at the URL, e.g.:                        ║
-            ║     youtube.com/watch?v=dQw4w9WgXcQ              ║
-            ║  3. Copy just the ID after "v="                   ║
-            ║     → dQw4w9WgXcQ                                ║
-            ║  4. Paste it into the iframe src below,           ║
-            ║     replacing YOUR_VIDEO_ID_HERE                  ║
-            ║  5. Delete the video-placeholder div              ║
-            ╚═══════════════════════════════════════════════════╝
-          -->
           <section class="video-section" id="video">
             <div class="video-section-header">
               <span class="year-badge">Video</span>
@@ -884,17 +797,12 @@
             </div>
 
             <div class="video-wrapper">
-
               <iframe
                 src="https://www.youtube.com/embed/cB3Kf3FGlgw?si=u6g4h0vPqmOKJ2Ej"
-                title="Lynx Clan Guide Video"
+                title="Ox Clan Guide Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
-
-
-
-
             </div>
             <p class="video-caption">Video guide for Ox Clan — build order and endgame strategy.</p>
 
