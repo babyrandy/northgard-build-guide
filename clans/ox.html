@@ -385,6 +385,80 @@
       .clan-hero .container { flex-direction: column; align-items: flex-start; }
       .clan-hero::before { display: none; }
     }
+        /* ── Video section ───────────────────────────────────────── */
+    .video-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 90px;
+    }
+    .video-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: 0.05rem;
+    }
+    .video-section-header h2::after { display: none; }
+
+    /* Responsive 16:9 container */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .video-placeholder-icon { font-size: 2.5rem; opacity: 0.25; }
+    .video-placeholder p {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .video-caption {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .guide-layout { grid-template-columns: 1fr; }
+      .guide-toc { position: static; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+      .guide-toc ul { flex-direction: row; flex-wrap: wrap; }
+      .guide-toc a { border-left: none; border-bottom: 2px solid transparent; }
+      .guide-toc a:hover, .guide-toc a.active { border-bottom-color: var(--gold); border-left-color: transparent; }
+      .clan-hero .container { flex-direction: column; align-items: flex-start; }
+      .clan-hero::before { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -396,6 +470,10 @@
         <h1>Northgard: Build Guide</h1>
       </div>
       <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>        
       </nav>
     </div>
   </header>
@@ -420,7 +498,7 @@
         class="clan-hero-img"
       >
       <div class="clan-hero-text">
-        <h1>Torfinn — Ox Clan</h1>
+        <h1>Himminbrjotir — Ox Clan</h1>
         <p class="subtitle">Led by Torfinn the Hero</p>
         <div class="clan-tags">
           <span class="tag tag-econ">Econ</span>
@@ -444,6 +522,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -477,7 +556,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Expand Out</div>
-                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins(Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
+                  <div class="step-desc">Only expand out to 1-2 tile. You want Colonization before expanding far.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">20 Food</span>
                   </div>
@@ -491,7 +570,7 @@
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House and Wood Cutters Lodge</div>
+                  <div class="step-title">Build House, Wood Cutters Lodge, and another Scout Camp</div>
                   <div class="step-desc">If you started with a ship wreck you can hold off on a Wood Cutters and immediately build a Mines on an Iron tile. Build a House so your population can continue to expand.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">100 Wood</span><span class="chip chip-gold"> 10 Gold</span>
@@ -500,13 +579,13 @@
               </div>
             <div class="tip">
               <div class="tip-icon">🐾</div>
-              <p><strong>Mining Ores:</strong>Your workers have improved work output at the cost of how many can be on one building. Start mining as soon as possible.</p>
+              <p><strong>Mining Ores:</strong>You want to find a dwarven camp ASAP. If you don't have one you'll need to build and operate your own mines.</p>
             </div>  
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
                   <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. Assign two villagers. Wood is needed for buildings throughout 801.</div>
+                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. You'll want 3 Woodcutters Lodges for your expansion.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
@@ -515,32 +594,39 @@
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">First Lore and Food buildings</div>
+                  <div class="step-desc"> Build your Food building. Get Sharp Axes.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
+                <div class="step-num">6</div>
+                <div class="step-body">
+                  <div class="step-title">Set 3 scouts on the Dwarves</div>
+                  <div class="step-desc">Start building relations with them immediately. You want their operatives and Ores.</div>
+                </div>
+              </div>
+              <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
-                  <div class="step-title">Summon Mielikki (if gold allows)</div>
-                  <div class="step-desc">If you can reach 100 gold before winter — via a nearby treasure chest, fox burrow, or dock — get Mielikki out in 800. She costs no iron, unlike most warchiefs.</div>
+                  <div class="step-title">Infrastructure</div>
+                  <div class="step-desc">Build up your Infrastructure. Ox is Wood hungry so have at least 3 Woodcutters Lodges. If you can, build 3 Longship docks for the Lore. Otherwise build 2-3 Trading Posts to build up your economy.</div>
                   <div class="step-cost">
-                    <span class="chip chip-gold">100 Gold</span>
+                    <span class="chip chip-wood">160 Wood</span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="tip">
+              <div class="tip-icon">🦌</div>
+              <p><strong>Lore priority summary for 801:</strong></p>
+              <div class="lore-list">
+                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Sharp Axes</span> — +20% Wood production.</div>
+                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Colonization</span> — Reduce the amount of food needed to colonize by 30%.</div>
+                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">City Builder</span> — Impoving a zone is 50% cheaper. Specialized units get 10% production increase and -50% upkeep</div>
+                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Weaponsmith</span> — +20% to all military units attack.</div>
               </div>
             </div>
           </section>
@@ -551,18 +637,18 @@
           <section class="year-section" id="y801">
             <div class="year-header">
               <span class="year-badge">Year 801</span>
-              <h2>Economy &amp; Reach 200 Fame</h2>
+              <h2>Economy &amp; Reach friendship with Dwarves</h2>
             </div>
             <p class="year-goal">
-              Goal: Hit 200 Fame as fast as possible to unlock the feast discount. Establish your krown economy and build out a sustainable mid-game.
+              Goal: Get dwarves so you can mine and forge quicker. 
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-title">Build Krowns/Build Military camps</div>
+                  <div class="step-desc"> If you have 3 shorelines build solely Longship Docks. Otherwise build at least 1 Trading Post and 1 of each of the Military Buildings.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                   </div>
@@ -571,31 +657,30 @@
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-title">Future Lore &amp; Forge</div>
+                  <div class="step-desc">You will now go down the middle tree. Build a Forge.</div>
                   <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
+                    <span class="chip chip-wood">60 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
+                  <div class="step-title">Colonize aggressively</div>
+                  <div class="step-desc"> Look to get your Chief out. If you have a clear clan expand towards Wolf Dens.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food per tile</span>
-                    <span class="chip chip-trophy">Trophies passive</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Feast in November (unless a teammate covers it)</div>
-                  <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
+                  <div class="step-title">Forging Upgrades and Begin Relic</div>
+                  <div class="step-desc">First queue up Merchants/Sailors & Food production. Leadership is the military path you want to take to benefit off of all the forging. Your relic will make it so the enemy will only target Torfinn, this is a game changer.</div>
                   <div class="step-cost">
-                    <span class="chip chip-food">Food varies</span>
+                    <span class="chip chip-gold">Iron + Krowns</span>
                   </div>
                 </div>
               </div>
@@ -603,34 +688,21 @@
                 <div class="step-num">6</div>
                 <div class="step-body">
                   <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc">Mielikki is weaker than most warchiefs — keep her alive with a healer nearby. Also needed to keep Brundr &amp; Kaelinn healthy during aggressive clearing pushes into harder camps.</div>
+                  <div class="step-desc"> You want to keep your Warrior healthy.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
+                    <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">7</div>
                 <div class="step-body">
-                  <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">~300 Gold for 7</span>
-                  </div>
+                  <div class="step-title">Go to Ancient Battlegrounds</div>
+                  <div class="step-desc">Torfinn gains bonuses based on how many Battlegrounds he digs up. Start clearing neutrals to increase your military experience.</div>
                 </div>
               </div>
             </div>
 
-            <div class="tip">
-              <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
-              <div class="lore-list">
-                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
-              </div>
-            </div>
           </section>
 
           <hr class="section-rule">
@@ -639,39 +711,28 @@
           <section class="year-section" id="y802">
             <div class="year-header">
               <span class="year-badge">Year 802</span>
-              <h2>Full Tracker Convert &amp; Military Build-Up</h2>
+              <h2>Full Warrior Convert &amp; Military Build-Up</h2>
             </div>
             <p class="year-goal">
-              Goal: Mass convert Trackers, upgrade the Forge and Archery Range, and prepare to contest or rush enemy positions. This is your power window.
+              Goal: Mass convert Warriors, upgrade your Food Buildings, and prepare to contest or rush enemy positions.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Convert up to 7 Trackers</div>
-                  <div class="step-desc">300 gold funds 7 Trackers. This is your primary military force. Their strength scales with Hunting Trophies accumulated, so if you've been clearing consistently, they hit significantly harder than generic units.</div>
+                  <div class="step-title">Convert up to 7 Warriors</div>
+                  <div class="step-desc">300 gold funds 7 Warriors. This is your primary military force.</div>
                   <div class="step-cost">
                     <span class="chip chip-gold">300 Gold</span>
                   </div>
                 </div>
               </div>
               <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-body">
-                  <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                    <span class="chip chip-gold">Iron + Gold</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Archery Range</div>
-                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
+                  <div class="step-title">Upgrade Food Buildings</div>
+                  <div class="step-desc">Upgrading your food will allow you to assign 2 Villagers. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">Stone + Wood</span>
                   </div>
@@ -680,18 +741,15 @@
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
+                  <div class="step-title">Mine Stone and Iron</div>
+                  <div class="step-desc">Continue to mine as much as possible. Your Dwarves should always be at work.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Longship Dock + Altar</div>
-                  <div class="step-desc">A second dock accelerates gold income significantly. The Altar unlocks additional lore paths. At this point your economy should be stable enough to run both.</div>
+                  <div class="step-title">Think about Alter/Military</div>
+                  <div class="step-desc"> If you have access to 3 stone think about Altar of Kings. Otherwise upgrade Military buildings.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">Wood + Stone</span>
                   </div>
@@ -700,8 +758,8 @@
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Rush Fire Arrows lore (aggressive build)</div>
-                  <div class="step-desc">If you're playing an aggressive rush build: go straight down the middle lore path, skip mining upgrades entirely, and prioritize Fire Arrows. Your Trackers become a much harder-hitting frontline threat.</div>
+                  <div class="step-title">Fight &amp; Find Battlegrounds</div>
+                  <div class="step-desc">Look to press the attack, your Chief (even with 1 Equipment) is a monster in battle. When Ancient Battlegrounds appear go straight for them. Your warriors are still scary on their own with Ferocious Charge.</div>
                   <div class="step-cost">
                     <span class="chip chip-lore">Lore</span>
                   </div>
@@ -724,39 +782,22 @@
               <h2>Sustained Army &amp; Map Control</h2>
             </div>
             <p class="year-goal">
-              Goal: Sustain 14+ Trackers, keep feasting to support allies, and use Mielikki's Lure to farm mythical animals for both trophies and economic bonuses.
+              Goal: Sustain 10+ Warriors and use Torfinn's taunt to win decisively.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Sustain 14+ Trackers in warband</div>
-                  <div class="step-desc">Keep military camps upgraded and cycle gold income directly into maintaining this number. Trackers with full trophy upgrades are one of the strongest sustained ranged forces in the game at this point.</div>
+                  <div class="step-title">Sustain 10+ Warriors in warband</div>
+                  <div class="step-desc">You'll usually have less villagers than other clans. Look to have a large healthy warband of 10+ Warriors.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Town Hall &amp; key buildings</div>
-                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802. The population growth speed lore (+25%) compounds well here.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Place Lynx Traps on enemy-adjacent neutral tiles</div>
-                  <div class="step-desc">Traps placed on unclaimed tiles near enemy borders passively generate trophies and can surprise enemies who push through those tiles. A subtle but effective harassment tool mid-game.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Trophy generation</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Continue feast cycle with teammates</div>
-                  <div class="step-desc">After 200 Fame, each animal kill lowers your next feast cost. Coordinate with your team — if a Stag or Goat player feasts, stockpile food for tile colonization instead. If not, you feast and buff the whole team.</div>
+                  <div class="step-title">Press the Attack and 500 Fame</div>
+                  <div class="step-desc">Upgrade buildings and colonize zones to get 500 fame. You'll be able to destroy buildings and press the attack hard by this point.</div>
                 </div>
               </div>
               <div class="step">
@@ -770,7 +811,7 @@
 
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the movement speed upgrade</strong> for archers so you can kite and reposition groups in combat rather than standing and trading fire.</p>
+              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out range your Warriors and attack very quickly. <strong>Use Torfinn's Taunt:</strong> The enemy will be helpless for the first 6 seconds of an engagement. Make sure you use this ability in a decisive battle.</p>
             </div>
           </section>
 
@@ -780,18 +821,18 @@
           <section class="year-section" id="y804">
             <div class="year-header">
               <span class="year-badge">Year 804</span>
-              <h2>500 Fame — Oskoreia &amp; Endgame</h2>
+              <h2>500 Fame — The True Hero &amp; Endgame</h2>
             </div>
             <p class="year-goal">
-              Goal: Reach 500 Fame to unlock Mielikki's Oskoreia ability. Summon mythical spirit animals for a devastating final push, or use your scaled Tracker army to close out a Dominion or Fame victory.
+              Goal: Reach 500 Fame to unlock Torfinn's Building Destruction.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Unlock Oskoreia (500 Fame milestone)</div>
-                  <div class="step-desc">Mielikki's 500 Fame bonus unlocks Oskoreia — she recalls the strongest wave of mythical animals your clan has killed. They return in spirit form for one final rampage. This is your endgame spike ability.</div>
+                  <div class="step-title">Unlock The True Hero. (500 Fame milestone)</div>
+                  <div class="step-desc">If you haven't already this will allow you to quickly reach the enemy backline if you're fighting in their territory. Combo this ability with the Taunt.</div>
                   <div class="step-cost">
                     <span class="chip chip-trophy">500 Fame</span>
                   </div>
@@ -800,33 +841,63 @@
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Finalize Path of the Hunter upgrades</div>
-                  <div class="step-desc">Spend remaining Hunting Trophies to max out Brundr, Kaelinn, and Tracker upgrades. The final trophy tier unlocks Mythical Lure — attracting the most powerful creatures to your territory for farming.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Hunting Trophies</span>
-                  </div>
+                  <div class="step-title">Military surge with 14–16 Warriors</div>
+                  <div class="step-desc">You shouldn't be going past 804 so going into a deficit is completely fine.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Military surge with 14–18 Trackers</div>
-                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows and movement speed is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
                   <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop.</div>
+                  <div class="step-desc">Ox wins most naturally via Dominion. Keep pushing to cripple the other team's economy.</div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
               <div class="tip-icon">🌿</div>
-              <p><strong>Oskoreia timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege. The spirit animals are powerful but only last one engagement, so don't waste it on a minor skirmish.</p>
+              <p><strong>Aegir timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege.</p>
             </div>
+          </section>
+
+          <hr class="section-rule">
+
+          <!-- ── VIDEO GUIDE ────────────────────────────────── -->
+          <!--
+            ╔═══════════════════════════════════════════════════╗
+            ║  HOW TO ADD YOUR YOUTUBE VIDEO                    ║
+            ║                                                   ║
+            ║  1. Open the YouTube video in your browser        ║
+            ║  2. Look at the URL, e.g.:                        ║
+            ║     youtube.com/watch?v=dQw4w9WgXcQ              ║
+            ║  3. Copy just the ID after "v="                   ║
+            ║     → dQw4w9WgXcQ                                ║
+            ║  4. Paste it into the iframe src below,           ║
+            ║     replacing YOUR_VIDEO_ID_HERE                  ║
+            ║  5. Delete the video-placeholder div              ║
+            ╚═══════════════════════════════════════════════════╝
+          -->
+          <section class="video-section" id="video">
+            <div class="video-section-header">
+              <span class="year-badge">Video</span>
+              <h2>Video Guide</h2>
+            </div>
+
+            <div class="video-wrapper">
+
+              <iframe
+                src="https://www.youtube.com/embed/cB3Kf3FGlgw?si=u6g4h0vPqmOKJ2Ej"
+                title="Lynx Clan Guide Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+
+
+
+
+            </div>
+            <p class="video-caption">Video guide for Ox Clan — build order and endgame strategy.</p>
+
           </section>
 
         </div><!-- /guide-content -->
