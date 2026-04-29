@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Northgard Lynx Clan build guide - Year 800 to Year 804">
+  <meta name="description" content="Northgard Boar Clan build guide — Year 800 to Year 804. Master lore accumulation, wildlife coexistence, and peaceful expansion with Svarn and the Shaman unit.">
   <link rel="stylesheet" href="../css/main.css">
   <script src="../js/interactions.js" defer></script>
-  <title>Lynx Clan Guide — Northgard Build Guide</title>
+  <title>Boar Clan Guide — Northgard Build Guide</title>
   <style>
-    /* ── Page-specific styles (lynx.html only) ─────────────────── */
+    /* ── Page-specific styles ─────────────────────────────────── */
 
     /* Breadcrumb */
     .breadcrumb {
@@ -43,13 +43,13 @@
       overflow: hidden;
     }
     .clan-hero::before {
-      content: "ᛚ";
+      content: "ᛒ";
       position: absolute;
       right: 3rem;
       top: 50%;
       transform: translateY(-50%);
       font-size: 14rem;
-      color: var(--clan-scout);
+      color: var(--text-muted);
       opacity: 0.04;
       pointer-events: none;
     }
@@ -96,9 +96,9 @@
       border-radius: 3px;
       border: 1px solid;
     }
-    .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07);  }
-    .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07);   }
-    .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
+    .tag-econ    { color: #7dc77d;            border-color: rgba(125,199,125,0.35); background: rgba(125,199,125,0.07); }
+    .tag-support { color: #a07dc9;            border-color: rgba(160,125,201,0.35); background: rgba(160,125,201,0.07); }
+    .tag-dlc     { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
 
     /* Main layout */
     .guide-layout {
@@ -363,6 +363,71 @@
       margin: 3rem 0;
     }
 
+    /* ── Video section ───────────────────────────────────────── */
+    .video-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 90px;
+    }
+    .video-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: 0.05rem;
+    }
+    .video-section-header h2::after { display: none; }
+
+    /* Responsive 16:9 container */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .video-placeholder-icon { font-size: 2.5rem; opacity: 0.25; }
+    .video-placeholder p {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .video-caption {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
     /* Responsive */
     @media (max-width: 860px) {
       .guide-layout {
@@ -407,7 +472,7 @@
       <span class="sep">›</span>
       <a href="../index.html#clans">Clans</a>
       <span class="sep">›</span>
-      <span class="current">Lynx Clan</span>
+      <span class="current">Boar Clan</span>
     </div>
   </nav>
 
@@ -415,17 +480,16 @@
   <div class="clan-hero">
     <div class="container">
       <img
-        src="../assets/images/Lynx_round.webp"
-        alt="Lynx Clan"
+        src="../assets/images/Boar_round.webp"
+        alt="Boar Clan"
         class="clan-hero-img"
       >
       <div class="clan-hero-text">
-        <h1>Brundr &amp; Kaelinn — Lynx Clan</h1>
-        <p class="subtitle">Led by Mielikki the Beastmaster · Masters of the Hunt</p>
+        <h1>Svarn — Boar Clan</h1>
+        <p class="subtitle">Masters of Lore &amp; Peaceful Expansion</p>
         <div class="clan-tags">
-          <span class="tag tag-combat">Clear</span>
-          <span class="tag tag-combat">Military</span>
-          <span class="tag tag-dlc">DLC</span>
+          <span class="tag tag-econ">Econ</span>
+          <span class="tag tag-support">Support</span>
         </div>
       </div>
     </div>
@@ -445,6 +509,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -457,10 +522,10 @@
           <section class="year-section" id="y800">
             <div class="year-header">
               <span class="year-badge">Year 800</span>
-              <h2>Foundation &amp; First Cats</h2>
+              <h2>Foundation &amp; First Lore</h2>
             </div>
             <p class="year-goal">
-              Goal: Get Brundr &amp; Kaelinn on the map immediately, start clearing neutral tiles for Hunting Trophies, and establish food + wood income before winter hits.
+              Goal: Establish stable <span class="chip chip-food">Food</span> and <span class="chip chip-wood">Wood</span> income, begin lore accumulation, and get Svarn on the map before winter.
             </p>
 
             <div class="build-steps">
@@ -468,7 +533,7 @@
                 <div class="step-num">1</div>
                 <div class="step-body">
                   <div class="step-title">Build Scout Camp</div>
-                  <div class="step-desc">Your very first build. Scout out all tiles connected to your Town Hall. Assign Scouts to Town Hall to gather food.</div>
+                  <div class="step-desc">First build of the game. Scout all adjacent tiles immediately — you're looking for Lore Stones, forest tiles, and food sources. Assign a villager to the Town Hall to keep food flowing.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
@@ -477,76 +542,64 @@
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Expand Out</div>
-                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins(Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
+                  <div class="step-title">Expand to Lore Stones or Forest Tiles</div>
+                  <div class="step-desc">Prioritize colonizing tiles with Lore Stones for early lore income. Forest tiles are your next best target — they feed your wood economy and give +2 max population each. Don't expand blindly; wait until scouting reveals a worthwhile tile.</div>
                   <div class="step-cost">
-                    <span class="chip chip-food">20 Food</span>
+                    <span class="chip chip-food">20–40 Food</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House and/or Archery Range</div>
-                  <div class="step-desc">If you started with a ship wreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
+                  <div class="step-title">Build Woodcutter's Lodge</div>
+                  <div class="step-desc">Get wood income running as soon as you have a forest tile. Assign two villagers. You'll need a steady wood supply for the buildings coming in 801. Don't delay this past your second expansion.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Recruiting Cats:</strong>Your Brundr &amp; Kaelinn costs 100 krowns and food TOTAL. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
-            </div>  
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. Assign two villagers. Wood is needed for buildings throughout 801.</div>
+                  <div class="step-title">Build First Lore Building (Runestone or Study)</div>
+                  <div class="step-desc">The Boar Clan's strength compounds with lore — get your first dedicated lore building up before winter. A Runestone on a Lore Stone tile is ideal. Assign a villager to it immediately to start generating lore each month.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-lore">+Lore/month</span>
                   </div>
                 </div>
-              </div>  
+              </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
+                  <div class="step-title">Take Simple Living Lore</div>
+                  <div class="step-desc">Your starting bonus gives you Free Knowledge +1. Use your first earned lore to unlock Simple Living — it reduces food consumption, which is critical for sustaining expansion in the early game without starving your population.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-lore">Lore</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">Summon Svarn</div>
+                  <div class="step-desc">Once you have enough gold, summon Svarn. He heals friendly animals in his zone and can tame one wolf or bear — giving you early map control without combat. Place him near a wildlife tile you plan to colonize next.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Summon Mielikki (if gold allows)</div>
-                  <div class="step-desc">If you can reach 100 gold before winter — via a nearby treasure chest, fox burrow, or dock — get Mielikki out in 800. She costs no iron, unlike most warchiefs.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">100 Gold</span>
+                    <span class="chip chip-food">Food</span>
+                    <span class="chip chip-lore">Lore</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Clearing priority:</strong> Middle tile first, then right, then left. Use Brundr &amp; Kaelinn for all clearing — keep your villagers on food and wood. Every animal the cats kill awards Hunting Trophies that unlock your Path of the Hunter upgrades.</p>
+              <div class="tip-icon">🐗</div>
+              <p><strong>Wildlife coexistence:</strong> Once you reach 200 Fame, wolves and brown bears in your colonized zones become friendly — they won't attack your villagers. This means you can safely colonize wildlife tiles for the extra <span class="chip chip-food">Food</span> cost and gain +2 max population per territory without clearing the animals first.</p>
             </div>
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Upgrade 1 house</strong> you want the population to convert 801-802.</p>
+              <p><strong>Don't neglect food:</strong> The Boar Clan's lore focus can tempt you to over-invest in knowledge buildings early. Keep at least one food source assigned at all times — running out of <span class="chip chip-food">Food</span> in winter will stall your entire build.</p>
             </div>
           </section>
 
@@ -556,28 +609,28 @@
           <section class="year-section" id="y801">
             <div class="year-header">
               <span class="year-badge">Year 801</span>
-              <h2>Economy &amp; Reach 200 Fame</h2>
+              <h2>Lore Engine &amp; Peaceful Expansion</h2>
             </div>
             <p class="year-goal">
-              Goal: Hit 200 Fame as fast as possible to unlock the feast discount. Establish your krown economy and build out a sustainable mid-game.
+              Goal: Expand <span class="chip chip-lore">Lore</span> income, grow your population by colonizing wildlife tiles, and establish a gold economy through a Trading Post or Docks before winter.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-title">Build Shamans</div>
+                  <div class="step-desc">The Shaman is the Boar Clan's unique unit — recruit one or two from your lore building. Shamans generate lore passively and provide buffs to nearby villagers, making them the backbone of your knowledge engine. Assign them to your lore buildings to maximize monthly output.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
+                    <span class="chip chip-lore">+Lore/month</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-title">Take Colonization Lore</div>
+                  <div class="step-desc">Unlock Colonization from the lore tree. This reduces the food cost of colonizing new territories, which is essential for the Boar Clan's expansion strategy — especially when targeting wildlife tiles that carry an extra food surcharge.</div>
                   <div class="step-cost">
                     <span class="chip chip-lore">Lore</span>
                   </div>
@@ -586,55 +639,55 @@
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
+                  <div class="step-title">Take Lay of the Land Lore</div>
+                  <div class="step-desc">Lay of the Land increases the population cap bonus you receive from each new territory. Combined with Colonization, this makes every tile you claim significantly more valuable — more land means more people, which means more workers and more lore.</div>
                   <div class="step-cost">
-                    <span class="chip chip-food">Food per tile</span>
-                    <span class="chip chip-trophy">Trophies passive</span>
+                    <span class="chip chip-lore">Lore</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <div class="step-title">Expand into Wildlife Tiles</div>
+                  <div class="step-desc">Once you hit 200 Fame, wolves and brown bears in your colonized zones become friendly. Colonize adjacent wildlife tiles — each new territory grants +2 max population. The extra food cost is worth it: you gain population cap without needing to fight the animals first.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-food">Food + extra (wildlife)</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Feast in November (unless a teammate covers it)</div>
-                  <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
+                  <div class="step-title">Build Trading Post or Docks</div>
+                  <div class="step-desc">Establish a gold income source. If you have coastal access, a Longship Dock provides steady passive gold. Otherwise, build a Trading Post. Gold funds future building upgrades and keeps your economy flexible heading into Year 802.</div>
                   <div class="step-cost">
-                    <span class="chip chip-food">Food varies</span>
+                    <span class="chip chip-wood">60–80 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc">Mielikki is weaker than most warchiefs — keep her alive with a healer nearby. Also needed to keep Brundr &amp; Kaelinn healthy during aggressive clearing pushes into harder camps.</div>
+                  <div class="step-title">Feast in November</div>
+                  <div class="step-desc">Hold a feast in November to accelerate Fame gain. Reaching 200 Fame unlocks the Boar Clan's wildlife coexistence mechanic — a critical milestone that opens up peaceful colonization of wildlife tiles for the rest of the game.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">~300 Gold for 7</span>
+                    <span class="chip chip-food">Food varies</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
-              <div class="lore-list">
-                <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
-              </div>
+              <div class="tip-icon">🐗</div>
+              <p><strong>Wildlife tiles are free real estate:</strong> Each colonized territory gives <strong>+2 max population</strong> — and wildlife tiles are no exception. After hitting <strong>200 Fame</strong>, wolves and bears in your zones become friendly, so you can colonize those tiles for just the extra <span class="chip chip-food">Food</span> cost without any combat. Stack as many as you can reach.</p>
+            </div>
+
+            <p style="font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12rem; text-transform: uppercase; color: var(--text-muted); margin: 1.25rem 0 0.5rem;">Lore Priority — Year 801</p>
+            <div class="lore-list">
+              <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Simple Living</span> — reduces food consumption, sustaining your growing population through expansion</div>
+              <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Colonization</span> — lowers the food cost of claiming new territories, enabling faster peaceful expansion</div>
+              <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Lay of the Land</span> — increases the population cap bonus per territory, compounding the value of every tile you colonize</div>
             </div>
           </section>
 
@@ -644,28 +697,38 @@
           <section class="year-section" id="y802">
             <div class="year-header">
               <span class="year-badge">Year 802</span>
-              <h2>Full Tracker Convert &amp; Military Build-Up</h2>
+              <h2>Economy Scaling &amp; Military Prep</h2>
             </div>
             <p class="year-goal">
-              Goal: Mass convert Trackers, upgrade the Forge and Archery Range, and prepare to contest or rush enemy positions. This is your power window.
+              Goal: Scale <span class="chip chip-lore">Lore</span> output through Bartering and Handiwork upgrades, build a credible military presence with Swordsmen or Warriors, and leverage the Boar Clan's compounding knowledge bonuses before winter.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Convert up to 7 Trackers</div>
-                  <div class="step-desc">300 gold funds 7 Trackers. This is your primary military force. Their strength scales with Hunting Trophies accumulated, so if you've been clearing consistently, they hit significantly harder than generic units.</div>
+                  <div class="step-title">Take Bartering Lore</div>
+                  <div class="step-desc">Bartering reduces the gold cost of trading actions and improves your exchange rates. For the Boar Clan, whose lore tree unlocks compound economic bonuses, this frees up gold to invest in buildings and military without stalling your knowledge engine. Take it early in 802 before your gold reserves are committed elsewhere.</div>
                   <div class="step-cost">
-                    <span class="chip chip-gold">300 Gold</span>
+                    <span class="chip chip-lore">Lore</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
+                  <div class="step-title">Take Handiwork Lore</div>
+                  <div class="step-desc">Handiwork reduces the wood and stone cost of building construction and upgrades. This is a high-value lore pick for the Boar Clan — you'll be building the Forge, upgrading lore buildings, and potentially constructing the Altar of Kings this year. Every resource saved here compounds into more lore and military capacity.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">Lore</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Build Forge &amp; Upgrade Tools</div>
+                  <div class="step-desc">Build the Forge and upgrade tools for your Woodcutters, Farmers, and Shamans. Tool upgrades directly amplify the Boar Clan's lore-based production bonuses — a Shaman with upgraded tools generates noticeably more lore per month. With Handiwork active, the Forge itself costs less to build.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
                     <span class="chip chip-gold">Iron + Gold</span>
@@ -673,50 +736,37 @@
                 </div>
               </div>
               <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Upgrade Archery Range</div>
-                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">Stone + Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
+                  <div class="step-title">Recruit Swordsmen or Warriors</div>
+                  <div class="step-desc">The Boar Clan is not a military clan, but you need a credible defense by mid-802. Recruit 3–5 Swordsmen or Warriors from your Town Hall. They won't win aggressive engagements, but they deter raids and protect your lore buildings long enough for your knowledge bonuses to pull ahead. Assign Svarn nearby to boost their morale.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
+                    <span class="chip chip-food">Food</span>
+                    <span class="chip chip-gold">Gold</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Longship Dock + Altar</div>
-                  <div class="step-desc">A second dock accelerates gold income significantly. The Altar unlocks additional lore paths. At this point your economy should be stable enough to run both.</div>
+                  <div class="step-title">Build Altar of Kings</div>
+                  <div class="step-desc">The Altar of Kings unlocks the Boar Clan's 500 Fame ability and opens additional lore paths unavailable through standard buildings. Build it once your wood and stone reserves are stable — Handiwork lore reduces the cost. Assign a Shaman to the Altar to maximize its lore output and accelerate your path to the endgame knowledge bonuses.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">Wood + Stone</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Rush Fire Arrows lore (aggressive build)</div>
-                  <div class="step-desc">If you're playing an aggressive rush build: go straight down the middle lore path, skip mining upgrades entirely, and prioritize Fire Arrows. Your Trackers become a much harder-hitting frontline threat.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
+                    <span class="chip chip-wood">Wood</span>
+                    <span class="chip chip-gold">Stone + Gold</span>
+                    <span class="chip chip-lore">+Lore/month</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">⚔</div>
-              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
+              <div class="tip-icon">🐗</div>
+              <p><strong>Peaceful scaling vs. military prep:</strong> If your map position is secure and no enemy is threatening, stay on the lore path — Bartering and Handiwork compound into significant economic leads by Year 803. If you're seeing early aggression, shift 2–3 villagers to military and delay the Altar. <strong>Don't try to do both at full speed</strong>; pick a lane based on what the map demands.</p>
+            </div>
+            <div class="warn">
+              <div class="tip-icon">⚠</div>
+              <p><strong>Don't over-invest in stone:</strong> The Boar Clan's strength comes from <span class="chip chip-lore">Lore</span> and population, not stone-heavy infrastructure. A second Stone Mine is rarely worth it in 802 — the villager is better assigned to a lore building or food source. Only build additional stone capacity if you have a specific upgrade queued that demands it.</p>
             </div>
           </section>
 
@@ -726,56 +776,74 @@
           <section class="year-section" id="y803">
             <div class="year-header">
               <span class="year-badge">Year 803</span>
-              <h2>Sustained Army &amp; Map Control</h2>
+              <h2>Lore Completion &amp; Map Control</h2>
             </div>
             <p class="year-goal">
-              Goal: Sustain 14+ Trackers, keep feasting to support allies, and use Mielikki's Lure to farm mythical animals for both trophies and economic bonuses.
+              Goal: Sustain your <span class="chip chip-lore">Lore</span> advantage, maintain a credible military presence, and control key map areas through territory expansion and Svarn's tamed animal.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Sustain 14+ Trackers in warband</div>
-                  <div class="step-desc">Keep military camps upgraded and cycle gold income directly into maintaining this number. Trackers with full trophy upgrades are one of the strongest sustained ranged forces in the game at this point.</div>
+                  <div class="step-title">Take Osmosis Lore</div>
+                  <div class="step-desc">Osmosis is the Boar Clan's premier late-lore pick — it generates passive lore based on the number of territories you control and the number of neighboring clans. The more land you hold, the more lore you earn each month without assigning a single worker. Take it as soon as it's available in 803.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">Lore</span>
+                  </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Town Hall &amp; key buildings</div>
-                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802. The population growth speed lore (+25%) compounds well here.</div>
+                  <div class="step-title">Complete the Lore Tree</div>
+                  <div class="step-desc">With Osmosis active and your Shamans still generating lore, push to finish the remaining lore tree upgrades. Prioritize anything that boosts production or population. Completing the tree gives you a compounding economic lead that most clans cannot match in the late game.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">Lore</span>
+                  </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Place Lynx Traps on enemy-adjacent neutral tiles</div>
-                  <div class="step-desc">Traps placed on unclaimed tiles near enemy borders passively generate trophies and can surprise enemies who push through those tiles. A subtle but effective harassment tool mid-game.</div>
+                  <div class="step-title">Upgrade Town Hall</div>
+                  <div class="step-desc">Upgrade your Town Hall to increase population growth speed and unlock higher-tier villager assignments. A larger population means more Shamans, more workers, and more military capacity — all of which compound your lore and economic output heading into Year 804.</div>
                   <div class="step-cost">
-                    <span class="chip chip-trophy">Trophy generation</span>
+                    <span class="chip chip-wood">Wood</span>
+                    <span class="chip chip-gold">Gold</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Continue feast cycle with teammates</div>
-                  <div class="step-desc">After 200 Fame, each animal kill lowers your next feast cost. Coordinate with your team — if a Stag or Goat player feasts, stockpile food for tile colonization instead. If not, you feast and buff the whole team.</div>
+                  <div class="step-title">Sustain Military Presence</div>
+                  <div class="step-desc">Keep 4–6 Swordsmen or Warriors active and positioned near your borders. You don't need to be aggressive, but a visible military deters raids and buys time for your lore engine to finish pulling ahead. Reassign villagers from food surplus to military if you're under pressure.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-food">Food</span>
+                    <span class="chip chip-gold">Gold</span>
+                  </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Use Kaelinn to clear Valkyries &amp; Draugr Tombs</div>
-                  <div class="step-desc">Kaelinn's mobility makes her excellent at taking down high-value neutral camps. If a camp is too strong for her alone, bring one Tracker for support. These camps drop significant resources and lore.</div>
+                  <div class="step-title">Deploy Svarn's Tamed Animal for Scouting &amp; Harassment</div>
+                  <div class="step-desc">If Svarn has a tamed bear or wolf, move it into neutral or enemy-adjacent territory. The tamed animal provides vision of enemy movements and can harass undefended workers or delay expansion. It's a low-cost way to project map presence without committing your military.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">Svarn ability</span>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <div class="tip">
+              <div class="tip-icon">🐗</div>
+              <p><strong>Osmosis scales with territory:</strong> Every tile you control increases the passive lore Osmosis generates each month. Maximize your territory footprint before taking Osmosis — colonize any reachable tiles in early 803 first, then unlock the lore. More neighbors also means more lore, so a crowded map is actually an advantage for the Boar Clan.</p>
+            </div>
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the movement speed upgrade</strong> for archers so you can kite and reposition groups in combat rather than standing and trading fire.</p>
+              <p><strong>Don't abandon military entirely:</strong> The Boar Clan's lore lead can create a false sense of security. By Year 803, aggressive clans like Wolf or Bear may have scaled their armies significantly. <strong>Keep at least a token military force</strong> and watch your borders — losing territory now directly reduces your Osmosis lore income.</p>
             </div>
           </section>
 
@@ -785,53 +853,93 @@
           <section class="year-section" id="y804">
             <div class="year-header">
               <span class="year-badge">Year 804</span>
-              <h2>500 Fame — Oskoreia &amp; Endgame</h2>
+              <h2>Win Condition Execution</h2>
             </div>
             <p class="year-goal">
-              Goal: Reach 500 Fame to unlock Mielikki's Oskoreia ability. Summon mythical spirit animals for a devastating final push, or use your scaled Tracker army to close out a Dominion or Fame victory.
+              Goal: Execute the win condition using accumulated <span class="chip chip-lore">Lore</span> and knowledge bonuses — push for Fame victory through territory control, feasts, and Svarn's 500 Fame endgame ability.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Unlock Oskoreia (500 Fame milestone)</div>
-                  <div class="step-desc">Mielikki's 500 Fame bonus unlocks Oskoreia — she recalls the strongest wave of mythical animals your clan has killed. They return in spirit form for one final rampage. This is your endgame spike ability.</div>
+                  <div class="step-title">Activate Altar of Kings — Wisdom Victory Path</div>
+                  <div class="step-desc">With the Altar of Kings built and your lore tree complete, activate the Wisdom victory path. The Boar Clan's compounding knowledge bonuses make this the most natural win condition — every lore unlock you've made since Year 800 has been building toward this moment. Assign Shamans to the Altar to maximize its output in the final push.</div>
                   <div class="step-cost">
-                    <span class="chip chip-trophy">500 Fame</span>
+                    <span class="chip chip-lore">Lore</span>
+                    <span class="chip chip-gold">Gold</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Finalize Path of the Hunter upgrades</div>
-                  <div class="step-desc">Spend remaining Hunting Trophies to max out Brundr, Kaelinn, and Tracker upgrades. The final trophy tier unlocks Mythical Lure — attracting the most powerful creatures to your territory for farming.</div>
+                  <div class="step-title">Fame Victory via Territory &amp; Feasts</div>
+                  <div class="step-desc">If the Wisdom path is contested or too slow, pivot to a Fame victory. Hold as many territories as possible — each one contributes to your Fame total — and hold feasts in November and March to spike your Fame gain. The Boar Clan's wide territorial footprint from peaceful expansion makes this a reliable fallback win condition.</div>
                   <div class="step-cost">
-                    <span class="chip chip-trophy">Hunting Trophies</span>
+                    <span class="chip chip-food">Food (feasts)</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Military surge with 14–18 Trackers</div>
-                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows and movement speed is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop.</div>
+                  <div class="step-title">Trigger Svarn's 500 Fame Endgame Ability</div>
+                  <div class="step-desc">Once you reach 500 Fame, Svarn's endgame ability unlocks through the Altar of Kings. Use it to deliver a decisive final push — whether that's a military surge, a territorial claim, or a knowledge-based victory spike. Time it for maximum impact: coordinate with a feast or a territorial expansion to compound the Fame gain in a single turn.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">500 Fame</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🌿</div>
-              <p><strong>Oskoreia timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege. The spirit animals are powerful but only last one engagement, so don't waste it on a minor skirmish.</p>
+              <div class="tip-icon">🐗</div>
+              <p><strong>The Boar Clan's win condition is knowledge accumulation:</strong> Every new knowledge unlock on the lore tree gives <strong>+5 Fame</strong>. This means every lore investment you've made since Year 800 has been quietly building your Fame total. By Year 804, a fully completed lore tree translates directly into a commanding Fame lead — making the Boar Clan one of the strongest late-game Fame victory clans in the right hands.</p>
             </div>
+          </section>
+
+        </div><!-- /guide-content -->
+
+          <hr class="section-rule">
+
+          <!-- ── VIDEO GUIDE ────────────────────────────────── -->
+          <!--
+            ╔═══════════════════════════════════════════════════╗
+            ║  HOW TO ADD YOUR YOUTUBE VIDEO                    ║
+            ║                                                   ║
+            ║  1. Open the YouTube video in your browser        ║
+            ║  2. Look at the URL, e.g.:                        ║
+            ║     youtube.com/watch?v=dQw4w9WgXcQ               ║
+            ║  3. Copy just the ID after "v="                   ║
+            ║     → dQw4w9WgXcQ                                 ║
+            ║  4. Paste it into the iframe src below,           ║
+            ║     replacing YOUR_VIDEO_ID_HERE                  ║
+            ║  5. Delete the video-placeholder div              ║
+            ╚═══════════════════════════════════════════════════╝
+          -->
+          <section class="video-section" id="video">
+            <div class="video-section-header">
+              <span class="year-badge">Video</span>
+              <h2>Video Guide</h2>
+            </div>
+
+            <div class="video-wrapper">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">▶</div>
+                <p>No video yet — add a YouTube ID above</p>
+              </div>
+              <!--
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Boar Clan Guide Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              -->
+            </div>
+            <p class="video-caption">Video guide for Boar Clan — lore engine, wildlife coexistence, and endgame strategy.</p>
+
           </section>
 
         </div><!-- /guide-content -->
