@@ -1,0 +1,12 @@
+{
+  "name": "northgard-build-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/boar-clan.test.js"
+  },
+  "dependencies": {
+    "jsdom": "^25.0.0"
+  }
+}
