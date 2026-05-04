@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Northgard Lynx Clan build guide - Year 800 to Year 804">
+  <meta name="description" content="Northgard Hippogriff Clan build guide - Year 800 to Year 804. Master Sindri, Varangian Guard, and forging with Gardariki.">
   <link rel="stylesheet" href="../css/main.css">
   <script src="../js/interactions.js" defer></script>
-  <title>Lynx Clan Guide — Northgard Build Guide</title>
+  <title>Hippogriff Clan Guide — Northgard Build Guide</title>
   <style>
     /* ── Page-specific styles (lynx.html only) ─────────────────── */
 
@@ -98,6 +98,10 @@
     }
     .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07);  }
     .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07);   }
+    .tag-econ   { color: var(--clan-econ);   border-color: rgba(79,175,124,0.35);  background: rgba(79,175,124,0.07);  }
+    .tag-support{ color: var(--clan-support);border-color: rgba(61,14,233,0.35);   background: rgba(95,168,224,0.06);  }
+    .tag-carry  { color: var(--clan-carry); border-color: rgba(199,202,18,0.35);  background: rgba(240,217,11,0.07);  }
+    .tag-military{color: var(--clan-military);border-color: rgba(197,138,11,0.35); background: rgba(95,168,224,0.06); }
     .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
 
     /* Main layout */
@@ -396,6 +400,10 @@
         <h1>Northgard: Build Guide</h1>
       </div>
       <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -407,7 +415,7 @@
       <span class="sep">›</span>
       <a href="../index.html#clans">Clans</a>
       <span class="sep">›</span>
-      <span class="current">Lynx Clan</span>
+      <span class="current">Hippogriff Clan</span>
     </div>
   </nav>
 
@@ -415,15 +423,15 @@
   <div class="clan-hero">
     <div class="container">
       <img
-        src="../assets/images/Lynx_round.webp"
-        alt="Lynx Clan"
+        src="../assets/images/Hippogriff_round.webp"
+        alt="Hippogriff Clan"
         class="clan-hero-img"
       >
       <div class="clan-hero-text">
-        <h1>Brundr &amp; Kaelinn — Lynx Clan</h1>
-        <p class="subtitle">Led by Mielikki the Beastmaster · Masters of the Hunt</p>
+        <h1>Gardariki — Hippogriff Clan</h1>
+        <p class="subtitle">Led by Sindri the Warchief · Masters of Forging &amp; Varangian Guard</p>
         <div class="clan-tags">
-          <span class="tag tag-combat">Clear</span>
+          <span class="tag tag-econ">Econ</span>
           <span class="tag tag-combat">Military</span>
           <span class="tag tag-dlc">DLC</span>
         </div>
@@ -445,6 +453,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -457,10 +466,10 @@
           <section class="year-section" id="y800">
             <div class="year-header">
               <span class="year-badge">Year 800</span>
-              <h2>Foundation &amp; First Cats</h2>
+              <h2>Foundation &amp; Sindri's Forge</h2>
             </div>
             <p class="year-goal">
-              Goal: Get Brundr &amp; Kaelinn on the map immediately, start clearing neutral tiles for Hunting Trophies, and establish food + wood income before winter hits.
+              Goal: Get Sindri working immediately — he combines the roles of Miner, Smith, and Builder. Start forging and building faster than any other clan. Hippogriff's Varangian Guard is your military backbone.
             </p>
 
             <div class="build-steps">
@@ -468,7 +477,7 @@
                 <div class="step-num">1</div>
                 <div class="step-body">
                   <div class="step-title">Build Scout Camp</div>
-                  <div class="step-desc">Your very first build. Scout out all tiles connected to your Town Hall. Assign Scouts to Town Hall to gather food.</div>
+                  <div class="step-desc">Scout all adjacent tiles. Look for Iron and Stone deposits — Sindri needs ore to forge. Hippogriff's forging speed is significantly faster than other clans.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
@@ -478,7 +487,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Expand Out</div>
-                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins(Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
+                  <div class="step-desc">Prioritize tiles with Iron and Stone deposits. Sindri's faster mining speed means you'll have ore significantly sooner than other clans.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">20 Food</span>
                   </div>
@@ -487,67 +496,58 @@
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House and/or Archery Range</div>
-                  <div class="step-desc">If you started with a ship wreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
+                  <div class="step-title">Build Forge &amp; summon Sindri</div>
+                  <div class="step-desc">Sindri is your warchief and master craftsman. He mines, forges, and builds faster than standard workers. Get him working on ore immediately.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">60 Wood</span>
+                    <span class="chip chip-gold">Krowns + Iron</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Recruiting Cats:</strong>Your Brundr &amp; Kaelinn costs 100 krowns and food TOTAL. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
-            </div>  
+
+              <div class="tip">
+                <div class="tip-icon">🦅</div>
+                <p><strong>Sindri:</strong> Sindri is the eldest of Brok and Eitria from the Horse clan. He combines their forging mastery with the discipline of Southern Kingdoms. He mines, forges, and builds faster than standard workers — keep him busy at all times.</p>
+              </div>
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. Assign two villagers. Wood is needed for buildings throughout 801.</div>
+                  <div class="step-title">Build Woodcutter's Lodge + Food Production</div>
+                  <div class="step-desc">Assign two villagers to wood and build a food source. Hippogriff needs a stable economy to sustain Sindri's forging operations and Varangian Guard upkeep.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">100 Wood</span>
                   </div>
                 </div>
-              </div>  
+              </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
+                  <div class="step-title">Build Iron Mine</div>
+                  <div class="step-desc">Sindri needs Iron to forge. Build an Iron Mine immediately and assign him to it. His faster mining speed means you'll have Iron significantly sooner than other clans.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">60 Wood</span>
+                    <span class="chip chip-gold">10 Krowns</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">Build Docks or Trading Post</div>
+                  <div class="step-desc">Steady Krown income funds Varangian Guard recruitment and building upgrades.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">80 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Summon Mielikki (if gold allows)</div>
-                  <div class="step-desc">If you can reach 100 gold before winter — via a nearby treasure chest, fox burrow, or dock — get Mielikki out in 800. She costs no iron, unlike most warchiefs.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">100 Gold</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Clearing priority:</strong> Middle tile first, then right, then left. Use Brundr &amp; Kaelinn for all clearing — keep your villagers on food and wood. Every animal the cats kill awards Hunting Trophies that unlock your Path of the Hunter upgrades.</p>
+              <div class="tip-icon">🦅</div>
+              <p><strong>Varangian Guard:</strong> Hippogriff's unique military unit. They're elite warriors with high stats, forged by Sindri's craftsmanship. Build Varangian Guard camps and recruit them as your primary military force.</p>
             </div>
-            <div class="warn">
-              <div class="tip-icon">⚠</div>
-              <p><strong>Upgrade 1 house</strong> you want the population to convert 801-802.</p>
-            </div>
+
           </section>
 
           <hr class="section-rule">
@@ -556,86 +556,66 @@
           <section class="year-section" id="y801">
             <div class="year-header">
               <span class="year-badge">Year 801</span>
-              <h2>Economy &amp; Reach 200 Fame</h2>
+              <h2>Economy &amp; Varangian Guard</h2>
             </div>
             <p class="year-goal">
-              Goal: Hit 200 Fame as fast as possible to unlock the feast discount. Establish your krown economy and build out a sustainable mid-game.
+              Goal: Build out your Varangian Guard force, keep Sindri forging upgrades, and establish a strong mid-game economy.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-title">Build Varangian Guard camps</div>
+                  <div class="step-desc">Recruit Varangian Guard — your primary military force. They're elite warriors with high stats, significantly stronger than standard Warriors.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
+                    <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-title">Keep Sindri forging upgrades</div>
+                  <div class="step-desc">Sindri's faster forging means you can upgrade tools significantly faster than other clans. Prioritize Merchant/Sailor upgrades first, then food production, then military.</div>
                   <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
+                    <span class="chip chip-gold">Iron + Krowns</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
+                  <div class="step-title">Colonize aggressively</div>
+                  <div class="step-desc">Expand toward more Iron and Stone deposits. Sindri's faster mining means you can sustain more ore production than other clans.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food per tile</span>
-                    <span class="chip chip-trophy">Trophies passive</span>
                   </div>
                 </div>
               </div>
               <div class="step">
-                <div class="step-num">5</div>
+                <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Feast in November (unless a teammate covers it)</div>
-                  <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
+                  <div class="step-title">Feast in November</div>
+                  <div class="step-desc">Accelerate your Fame gain. Hippogriff's forging bonuses and Varangian Guard make Fame generation faster than most clans.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">Food varies</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc">Mielikki is weaker than most warchiefs — keep her alive with a healer nearby. Also needed to keep Brundr &amp; Kaelinn healthy during aggressive clearing pushes into harder camps.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">~300 Gold for 7</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
+              <div class="tip-icon">🦅</div>
+              <p><strong>Lore priority for 801:</strong></p>
               <div class="lore-list">
                 <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
+                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Feeling Safe</span> — +3 Happiness with warchief, +1 per upgraded military camp</div>
+                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">City Builder</span> — improving a zone is 50% cheaper; specialized units get +10% production and –50% upkeep</div>
+                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Carpentry Mastery</span> — –20% building upgrade costs and upkeep</div>
               </div>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -644,80 +624,42 @@
           <section class="year-section" id="y802">
             <div class="year-header">
               <span class="year-badge">Year 802</span>
-              <h2>Full Tracker Convert &amp; Military Build-Up</h2>
+              <h2>Full Varangian Guard &amp; Military Push</h2>
             </div>
             <p class="year-goal">
-              Goal: Mass convert Trackers, upgrade the Forge and Archery Range, and prepare to contest or rush enemy positions. This is your power window.
+              Goal: Build out your full Varangian Guard force, upgrade your military buildings, and push the enemy. Hippogriff's elite units are at their peak in 802.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Convert up to 7 Trackers</div>
-                  <div class="step-desc">300 gold funds 7 Trackers. This is your primary military force. Their strength scales with Hunting Trophies accumulated, so if you've been clearing consistently, they hit significantly harder than generic units.</div>
+                  <div class="step-title">Convert 7+ Varangian Guard</div>
+                  <div class="step-desc">Your primary military force. Varangian Guard are elite warriors with high stats — significantly stronger than standard Warriors. Combined with Sindri's forging buffs, they're formidable.</div>
                   <div class="step-cost">
-                    <span class="chip chip-gold">300 Gold</span>
+                    <span class="chip chip-gold">Krowns + Food</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                    <span class="chip chip-gold">Iron + Gold</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Upgrade Archery Range</div>
-                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
+                  <div class="step-title">Upgrade military buildings</div>
+                  <div class="step-desc">More warband slots means more Varangian Guard in a single engagement. Sindri's faster building speed means upgrades complete significantly faster than for other clans.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">Stone + Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
-                <div class="step-num">4</div>
+                <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">5</div>
-                <div class="step-body">
-                  <div class="step-title">Build second Longship Dock + Altar</div>
-                  <div class="step-desc">A second dock accelerates gold income significantly. The Altar unlocks additional lore paths. At this point your economy should be stable enough to run both.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">Wood + Stone</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Rush Fire Arrows lore (aggressive build)</div>
-                  <div class="step-desc">If you're playing an aggressive rush build: go straight down the middle lore path, skip mining upgrades entirely, and prioritize Fire Arrows. Your Trackers become a much harder-hitting frontline threat.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
-                  </div>
+                  <div class="step-title">Push the enemy</div>
+                  <div class="step-desc">Varangian Guard with Sindri leading are a powerful military composition. Push into enemy territory and use Sindri's combat abilities to support your army.</div>
                 </div>
               </div>
             </div>
 
-            <div class="tip">
-              <div class="tip-icon">⚔</div>
-              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
-            </div>
           </section>
 
           <hr class="section-rule">
@@ -729,54 +671,33 @@
               <h2>Sustained Army &amp; Map Control</h2>
             </div>
             <p class="year-goal">
-              Goal: Sustain 14+ Trackers, keep feasting to support allies, and use Mielikki's Lure to farm mythical animals for both trophies and economic bonuses.
+              Goal: Sustain 10+ Varangian Guard, keep Sindri forging, and use Hippogriff's economic advantage to outlast the enemy.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Sustain 14+ Trackers in warband</div>
-                  <div class="step-desc">Keep military camps upgraded and cycle gold income directly into maintaining this number. Trackers with full trophy upgrades are one of the strongest sustained ranged forces in the game at this point.</div>
+                  <div class="step-title">Sustain 10+ Varangian Guard in warband</div>
+                  <div class="step-desc">Keep military camps upgraded and cycle Krown income into maintaining your warband. Varangian Guard are expensive but significantly stronger than standard units.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Town Hall &amp; key buildings</div>
-                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802. The population growth speed lore (+25%) compounds well here.</div>
+                  <div class="step-title">Keep Sindri forging</div>
+                  <div class="step-desc">Never let Sindri sit idle. He should always be mining, forging, or building. His faster output is your most valuable economic asset.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Place Lynx Traps on enemy-adjacent neutral tiles</div>
-                  <div class="step-desc">Traps placed on unclaimed tiles near enemy borders passively generate trophies and can surprise enemies who push through those tiles. A subtle but effective harassment tool mid-game.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Trophy generation</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Continue feast cycle with teammates</div>
-                  <div class="step-desc">After 200 Fame, each animal kill lowers your next feast cost. Coordinate with your team — if a Stag or Goat player feasts, stockpile food for tile colonization instead. If not, you feast and buff the whole team.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">5</div>
-                <div class="step-body">
-                  <div class="step-title">Use Kaelinn to clear Valkyries &amp; Draugr Tombs</div>
-                  <div class="step-desc">Kaelinn's mobility makes her excellent at taking down high-value neutral camps. If a camp is too strong for her alone, bring one Tracker for support. These camps drop significant resources and lore.</div>
+                  <div class="step-title">Coordinate with team to close out</div>
+                  <div class="step-desc">Hippogriff is a strong mid-to-late game clan. If your team has early-game clans, they should have created space for you to scale. Now it's time to deliver.</div>
                 </div>
               </div>
             </div>
 
-            <div class="warn">
-              <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the movement speed upgrade</strong> for archers so you can kite and reposition groups in combat rather than standing and trading fire.</p>
-            </div>
           </section>
 
           <hr class="section-rule">
@@ -785,53 +706,46 @@
           <section class="year-section" id="y804">
             <div class="year-header">
               <span class="year-badge">Year 804</span>
-              <h2>500 Fame — Oskoreia &amp; Endgame</h2>
+              <h2>Endgame Domination</h2>
             </div>
             <p class="year-goal">
-              Goal: Reach 500 Fame to unlock Mielikki's Oskoreia ability. Summon mythical spirit animals for a devastating final push, or use your scaled Tracker army to close out a Dominion or Fame victory.
+              Goal: Close out with Domination or Fame Victory. Hippogriff's Varangian Guard and Sindri's forging make them a formidable endgame threat.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Unlock Oskoreia (500 Fame milestone)</div>
-                  <div class="step-desc">Mielikki's 500 Fame bonus unlocks Oskoreia — she recalls the strongest wave of mythical animals your clan has killed. They return in spirit form for one final rampage. This is your endgame spike ability.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">500 Fame</span>
-                  </div>
+                  <div class="step-title">Military surge with 14+ Varangian Guard</div>
+                  <div class="step-desc">A full warband of Varangian Guard with Sindri is one of the most powerful military compositions in the game. Push for Domination victory.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Finalize Path of the Hunter upgrades</div>
-                  <div class="step-desc">Spend remaining Hunting Trophies to max out Brundr, Kaelinn, and Tracker upgrades. The final trophy tier unlocks Mythical Lure — attracting the most powerful creatures to your territory for farming.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Hunting Trophies</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Military surge with 14–18 Trackers</div>
-                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows and movement speed is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop.</div>
+                  <div class="step-title">Use Sindri in combat</div>
+                  <div class="step-desc">Sindri is a powerful combat unit in addition to his crafting role. Use him to lead your Varangian Guard into battle.</div>
                 </div>
               </div>
             </div>
 
-            <div class="tip">
-              <div class="tip-icon">🌿</div>
-              <p><strong>Oskoreia timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege. The spirit animals are powerful but only last one engagement, so don't waste it on a minor skirmish.</p>
+          </section>
+
+          <hr class="section-rule">
+
+          <!-- ── VIDEO GUIDE ────────────────────────────────── -->
+          <section class="video-section" id="video">
+            <div class="video-section-header">
+              <span class="year-badge">Video</span>
+              <h2>Video Guide</h2>
             </div>
+            <div class="video-wrapper">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">▶</div>
+                <p>Video Guide Coming Soon</p>
+              </div>
+            </div>
+            <p class="video-caption">Hippogriff Clan guide — Sindri's forging, Varangian Guard, and kingdom building strategy.</p>
           </section>
 
         </div><!-- /guide-content -->
@@ -839,14 +753,13 @@
     </div><!-- /container -->
   </main>
 
-  <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="../index.html">Clans</a></li>
-          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../about/index.html">About</a></li>
         </ul>
       </div>
     </div>

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Northgard Lynx Clan build guide - Year 800 to Year 804">
+  <meta name="description" content="Northgard Snake Clan build guide - Year 800 to Year 804. Master Signy's growth, Skirmishers, and Scorched Earth with Svafnir.">
   <link rel="stylesheet" href="../css/main.css">
   <script src="../js/interactions.js" defer></script>
-  <title>Lynx Clan Guide — Northgard Build Guide</title>
+  <title>Snake Clan Guide — Northgard Build Guide</title>
   <style>
     /* ── Page-specific styles (lynx.html only) ─────────────────── */
 
@@ -98,6 +98,10 @@
     }
     .tag-scout  { color: var(--clan-scout);  border-color: rgba(95,168,224,0.35);  background: rgba(95,168,224,0.07);  }
     .tag-combat { color: var(--clan-combat); border-color: rgba(224,90,90,0.35);   background: rgba(224,90,90,0.07);   }
+    .tag-econ   { color: var(--clan-econ);   border-color: rgba(79,175,124,0.35);  background: rgba(79,175,124,0.07);  }
+    .tag-support{ color: var(--clan-support);border-color: rgba(61,14,233,0.35);   background: rgba(95,168,224,0.06);  }
+    .tag-carry  { color: var(--clan-carry); border-color: rgba(199,202,18,0.35);  background: rgba(240,217,11,0.07);  }
+    .tag-military{color: var(--clan-military);border-color: rgba(197,138,11,0.35); background: rgba(95,168,224,0.06); }
     .tag-dlc    { color: var(--text-muted);  border-color: var(--border);          background: transparent;            }
 
     /* Main layout */
@@ -396,6 +400,10 @@
         <h1>Northgard: Build Guide</h1>
       </div>
       <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Clans</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -407,7 +415,7 @@
       <span class="sep">›</span>
       <a href="../index.html#clans">Clans</a>
       <span class="sep">›</span>
-      <span class="current">Lynx Clan</span>
+      <span class="current">Snake Clan</span>
     </div>
   </nav>
 
@@ -415,16 +423,16 @@
   <div class="clan-hero">
     <div class="container">
       <img
-        src="../assets/images/Lynx_round.webp"
-        alt="Lynx Clan"
+        src="../assets/images/Snake_round.webp"
+        alt="Snake Clan"
         class="clan-hero-img"
       >
       <div class="clan-hero-text">
-        <h1>Brundr &amp; Kaelinn — Lynx Clan</h1>
-        <p class="subtitle">Led by Mielikki the Beastmaster · Masters of the Hunt</p>
+        <h1>Svafnir — Snake Clan</h1>
+        <p class="subtitle">Led by Signy the Growing Warchief · Masters of Stealth &amp; Sabotage</p>
         <div class="clan-tags">
-          <span class="tag tag-combat">Clear</span>
           <span class="tag tag-combat">Military</span>
+          <span class="tag tag-combat">Clear</span>
           <span class="tag tag-dlc">DLC</span>
         </div>
       </div>
@@ -445,6 +453,7 @@
             <li><a href="#y802">Year 802</a></li>
             <li><a href="#y803">Year 803</a></li>
             <li><a href="#y804">Year 804</a></li>
+            <li><a href="#video">Video Guide</a></li>
           </ul>
           <hr class="toc-divider">
           <a href="../index.html" class="toc-back">← All Clans</a>
@@ -457,10 +466,10 @@
           <section class="year-section" id="y800">
             <div class="year-header">
               <span class="year-badge">Year 800</span>
-              <h2>Foundation &amp; First Cats</h2>
+              <h2>Foundation &amp; Young Signy</h2>
             </div>
             <p class="year-goal">
-              Goal: Get Brundr &amp; Kaelinn on the map immediately, start clearing neutral tiles for Hunting Trophies, and establish food + wood income before winter hits.
+              Goal: Establish food and wood income, build Skirmisher Camps, and start clearing with Signy. She starts as a child and grows stronger each year — protect her early.
             </p>
 
             <div class="build-steps">
@@ -468,7 +477,7 @@
                 <div class="step-num">1</div>
                 <div class="step-body">
                   <div class="step-title">Build Scout Camp</div>
-                  <div class="step-desc">Your very first build. Scout out all tiles connected to your Town Hall. Assign Scouts to Town Hall to gather food.</div>
+                  <div class="step-desc">Scout all adjacent tiles. Signy starts on the map with you — she can use Scorched Earth to burn neutral zones and steal resources immediately.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
@@ -478,7 +487,7 @@
                 <div class="step-num">2</div>
                 <div class="step-body">
                   <div class="step-title">Expand Out</div>
-                  <div class="step-desc">You can expand while scouting if you see a Lore Stone or any Ruins(Tombs or Shipwrecks). Otherwise wait until you see Lore or Food.</div>
+                  <div class="step-desc">Prioritize food tiles. Snake doesn't need to be picky — you want territory to burn and resources to steal.</div>
                   <div class="step-cost">
                     <span class="chip chip-food">20 Food</span>
                   </div>
@@ -487,67 +496,57 @@
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Build House and/or Archery Range</div>
-                  <div class="step-desc">If you started with a ship wreck build an Archery Range. Otherwise build a House so your population can continue to expand.</div>
+                  <div class="step-title">Build Skirmisher Camp</div>
+                  <div class="step-desc">Skirmishers are your primary military unit — fast, stealthy, and cheap. They can traverse neutral zones without engaging combat and attack enemy production buildings to steal resources.</div>
                   <div class="step-cost">
                     <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
-            <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Recruiting Cats:</strong>Your Brundr &amp; Kaelinn costs 100 krowns and food TOTAL. Begin building the Archery Range around 80 krowns. Only spend food when you need to.</p>
-            </div>  
+
+              <div class="tip">
+                <div class="tip-icon">🐍</div>
+                <p><strong>Signy grows up:</strong> Signy starts as a child and gains new abilities each year. At age 16 (Year 801), she learns Cloaked — she can hide from enemies unless war is declared. At age 17, all military units learn Cloaked. At age 18, Scorched Earth can target enemy zones. Protect her early.</p>
+              </div>
+
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build Woodcutter's Lodge</div>
-                  <div class="step-desc">Delay this until you have around 80 Wood remaining so you can squeeze extra food-gathering time first. Assign two villagers. Wood is needed for buildings throughout 801.</div>
+                  <div class="step-title">Build Woodcutter's Lodge + Food Production</div>
+                  <div class="step-desc">Assign two villagers to wood and build a food source. Snake needs a stable economy to sustain Skirmisher upkeep.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
+                    <span class="chip chip-wood">100 Wood</span>
                   </div>
                 </div>
-              </div>  
+              </div>
               <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">First Lore and Hunter's Lodge</div>
-                  <div class="step-desc"> Build a Hunter's Lodge and take Sharp Axes. You'll want Spoils of Plenty so you don't have to rely on native food tiles.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">50 Wood</span>
-                  </div>
+                  <div class="step-title">Use Scorched Earth on neutral zones</div>
+                  <div class="step-desc">Signy can burn neutral zones to gain military advantage and steal resources. Use this to deny resources to enemies and generate income for your clan.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">6</div>
                 <div class="step-body">
-                  <div class="step-title">Build Docks and Wood Cutters</div>
-                  <div class="step-desc">You will want 100 krowns to recruit Mielikki. You will also need a lot of wood to build more camps and houses</div>
+                  <div class="step-title">Steal Lore from other clans</div>
+                  <div class="step-desc">Snake can copy Knowledge from other clans they encounter instead of earning Fame. Use this to accelerate your lore progression without needing to generate Fame.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Summon Mielikki (if gold allows)</div>
-                  <div class="step-desc">If you can reach 100 gold before winter — via a nearby treasure chest, fox burrow, or dock — get Mielikki out in 800. She costs no iron, unlike most warchiefs.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">100 Gold</span>
+                    <span class="chip chip-lore">Stolen Lore</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🐾</div>
-              <p><strong>Clearing priority:</strong> Middle tile first, then right, then left. Use Brundr &amp; Kaelinn for all clearing — keep your villagers on food and wood. Every animal the cats kill awards Hunting Trophies that unlock your Path of the Hunter upgrades.</p>
+              <div class="tip-icon">🐍</div>
+              <p><strong>No Fame Victory:</strong> Snake cannot win via Fame. Instead, they copy Knowledge from other clans. Focus on Domination Victory — use Signy's stealth and Skirmishers to overwhelm enemies through sabotage and surprise attacks.</p>
             </div>
             <div class="warn">
               <div class="tip-icon">⚠</div>
-              <p><strong>Upgrade 1 house</strong> you want the population to convert 801-802.</p>
+              <p><strong>Protect Signy:</strong> Signy is your most valuable unit. She grows stronger each year — losing her early is devastating. Keep her away from large enemy forces until she's at least age 17.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -556,86 +555,73 @@
           <section class="year-section" id="y801">
             <div class="year-header">
               <span class="year-badge">Year 801</span>
-              <h2>Economy &amp; Reach 200 Fame</h2>
+              <h2>Signy Age 16 &amp; Cloaked</h2>
             </div>
             <p class="year-goal">
-              Goal: Hit 200 Fame as fast as possible to unlock the feast discount. Establish your krown economy and build out a sustainable mid-game.
+              Goal: Reach Year 801 to unlock Signy's Cloaked ability. She can now hide from enemies and move through zones undetected. This opens up aggressive harassment strategies.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Build Longship Dock(s)</div>
-                  <div class="step-desc">If you have 2+ coastal tiles, build a second docks for steady gold income. Otherwise build a Trading Post. Gold funds Trackers and Mielikki if you haven't summoned her yet.</div>
+                  <div class="step-title">Build more Skirmisher Camps</div>
+                  <div class="step-desc">More Skirmisher Camps means more Skirmishers in your warband. Skirmishers are cheap and fast — you want 7–10 of them by mid-801.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
+                    <span class="chip chip-wood">50 Wood</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Take your 3rd Lore &amp; more</div>
-                  <div class="step-desc">Now go down the middle tree. The most important Lores are "Archery Mastery" and "Nimble</div>
+                  <div class="step-title">Use Signy's Cloaked ability</div>
+                  <div class="step-desc">At age 16, Signy can hide from enemies unless war is declared in that zone. Use this to scout enemy positions, steal resources, and set up ambushes without being detected.</div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Steal Lore from encountered clans</div>
+                  <div class="step-desc">Keep stealing Lore from every clan you encounter. Snake's lore progression is entirely dependent on stealing — the more clans you encounter, the faster you advance.</div>
+                  <div class="step-cost">
+                    <span class="chip chip-lore">Stolen Lore</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <div class="step-title">Use Under Pressure lore</div>
+                  <div class="step-desc">Skirmishers can attack enemy production buildings and houses to steal the resources they contain. This is your primary economic harassment tool — target enemy Forges and food buildings.</div>
                   <div class="step-cost">
                     <span class="chip chip-lore">Lore</span>
                   </div>
                 </div>
               </div>
               <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Colonize aggressively &amp; Clear</div>
-                  <div class="step-desc">Expand toward wolf dens and deer tiles. While you're expanding clear your teammates, you should be doing this as soon as you have your cats.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-food">Food per tile</span>
-                    <span class="chip chip-trophy">Trophies passive</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
                 <div class="step-num">5</div>
                 <div class="step-body">
-                  <div class="step-title">Feast in November (unless a teammate covers it)</div>
-                  <div class="step-desc">Do the November feast to accelerate your Fame gain. After hitting 200 Fame, every animal kill reduces the cost of your next feast — meaning future feasts become significantly cheaper the more you hunt.</div>
+                  <div class="step-title">Build Docks or Trading Post</div>
+                  <div class="step-desc">Steady Krown income funds Skirmisher upkeep and building upgrades.</div>
                   <div class="step-cost">
-                    <span class="chip chip-food">Food varies</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Build Healer's Hut</div>
-                  <div class="step-desc">Mielikki is weaker than most warchiefs — keep her alive with a healer nearby. Also needed to keep Brundr &amp; Kaelinn healthy during aggressive clearing pushes into harder camps.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">7</div>
-                <div class="step-body">
-                  <div class="step-title">Hire first Tracker</div>
-                  <div class="step-desc">Trackers are your core ranged combat unit, produced at the Archery Range. They get stronger with every wildlife kill.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">~300 Gold for 7</span>
+                    <span class="chip chip-wood">80 Wood</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
-              <div class="tip-icon">🦌</div>
-              <p><strong>Lore priority summary for 801:</strong></p>
+              <div class="tip-icon">🐍</div>
+              <p><strong>Lore priority for 801:</strong></p>
               <div class="lore-list">
                 <div class="lore-item"><span class="lore-rank">1st</span> <span class="lore-name">Weaponsmith</span> — +20% attack for all military units</div>
-                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Archery Mastery</span> — Your first Tracker is always free. Reduces Archery Range Archery Range's upgrade cost by 50%.</div>
-                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Feeling Safe</span> Gain +3 Happiness if you have a Warchief and +1 Happiness per upgraded military camp.</div>
-                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Nimble Paws</span> Brundr and Kaelinn gain +35% max health. They also frequently leap, dodging all attacks while airbone.</div>
+                <div class="lore-item"><span class="lore-rank">2nd</span> <span class="lore-name">Under Pressure</span> — Skirmishers can attack enemy production buildings to steal resources</div>
+                <div class="lore-item"><span class="lore-rank">3rd</span> <span class="lore-name">Fur Coats</span> — Your units no longer have reduced power during winter</div>
+                <div class="lore-item"><span class="lore-rank">4th</span> <span class="lore-name">Shiny Happy People</span> — –20% required Happiness based on population</div>
               </div>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -644,80 +630,51 @@
           <section class="year-section" id="y802">
             <div class="year-header">
               <span class="year-badge">Year 802</span>
-              <h2>Full Tracker Convert &amp; Military Build-Up</h2>
+              <h2>Signy Age 17 &amp; Army-Wide Cloaked</h2>
             </div>
             <p class="year-goal">
-              Goal: Mass convert Trackers, upgrade the Forge and Archery Range, and prepare to contest or rush enemy positions. This is your power window.
+              Goal: Reach Year 802 for Signy's age 17 ability — all military units learn Cloaked. Your entire army can now move undetected. This is Snake's peak power window.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Convert up to 7 Trackers</div>
-                  <div class="step-desc">300 gold funds 7 Trackers. This is your primary military force. Their strength scales with Hunting Trophies accumulated, so if you've been clearing consistently, they hit significantly harder than generic units.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-gold">300 Gold</span>
-                  </div>
+                  <div class="step-title">Deploy army-wide Cloaked</div>
+                  <div class="step-desc">At age 17, Signy teaches Cloaked to all military units. Your entire warband can now move through zones undetected. Use this to set up devastating ambushes on enemy positions.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Build Forge &amp; upgrade tools</div>
-                  <div class="step-desc">Upgrade Woodcutters, Hunters, Sailors, and Trackers. Tool upgrades compound your existing production bonuses. With Spoils of Plenty active, Hunter tool upgrades cost less.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">80 Wood</span>
-                    <span class="chip chip-gold">Iron + Gold</span>
-                  </div>
+                  <div class="step-title">Use Scorched Earth on two zones simultaneously</div>
+                  <div class="step-desc">At age 17, Signy can burn two zones at once. Use this to deny resources to multiple enemies simultaneously and create chaos in their economy.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Archery Range</div>
-                  <div class="step-desc">Upgrading the Archery Range increases warband slots. Take the Archery Mastery lore if available — it cuts the upgrade cost by 50%. More slots means more Trackers in a single engagement.</div>
+                  <div class="step-title">Forge Gungnir relic</div>
+                  <div class="step-desc">Grants all military units the Stealth ability and enhances their evasiveness. Combined with army-wide Cloaked, your army becomes nearly impossible to intercept.</div>
                   <div class="step-cost">
-                    <span class="chip chip-wood">Stone + Wood</span>
+                    <span class="chip chip-gold">Iron + Krowns</span>
                   </div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-body">
-                  <div class="step-title">Build second Stone Mine</div>
-                  <div class="step-desc">Only if you're not under rush pressure. Stone fuels your building upgrades. If an enemy is pushing early, hold off and keep villagers on food/military rather than stretching economy.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">60 Wood</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">5</div>
-                <div class="step-body">
-                  <div class="step-title">Build second Longship Dock + Altar</div>
-                  <div class="step-desc">A second dock accelerates gold income significantly. The Altar unlocks additional lore paths. At this point your economy should be stable enough to run both.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-wood">Wood + Stone</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">6</div>
-                <div class="step-body">
-                  <div class="step-title">Rush Fire Arrows lore (aggressive build)</div>
-                  <div class="step-desc">If you're playing an aggressive rush build: go straight down the middle lore path, skip mining upgrades entirely, and prioritize Fire Arrows. Your Trackers become a much harder-hitting frontline threat.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-lore">Lore</span>
-                  </div>
+                  <div class="step-title">Push the enemy</div>
+                  <div class="step-desc">With army-wide Cloaked and Gungnir, your Skirmishers can infiltrate enemy territory undetected. Target their Town Hall and production buildings for maximum disruption.</div>
                 </div>
               </div>
             </div>
 
             <div class="tip">
               <div class="tip-icon">⚔</div>
-              <p><strong>Rush vs. Scale decision point:</strong> If the map is an 802 game (enemy rushes expected), prioritize Fire Arrows and push early. If you have space to scale, hold back and keep converting Trackers until you have <strong>14+ in your warband</strong> before engaging.</p>
+              <p><strong>Ambush timing:</strong> Move your cloaked army into position before declaring war. When you attack, the enemy has no time to react — your Skirmishers are already inside their territory. This is Snake's signature play.</p>
             </div>
+
           </section>
 
           <hr class="section-rule">
@@ -726,57 +683,36 @@
           <section class="year-section" id="y803">
             <div class="year-header">
               <span class="year-badge">Year 803</span>
-              <h2>Sustained Army &amp; Map Control</h2>
+              <h2>Signy Age 18 &amp; Enemy Zone Scorched Earth</h2>
             </div>
             <p class="year-goal">
-              Goal: Sustain 14+ Trackers, keep feasting to support allies, and use Mielikki's Lure to farm mythical animals for both trophies and economic bonuses.
+              Goal: Reach Year 803 for Signy's age 18 ability — Scorched Earth can now target enemy zones, giving military units a 50% attack buff in those zones.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Sustain 14+ Trackers in warband</div>
-                  <div class="step-desc">Keep military camps upgraded and cycle gold income directly into maintaining this number. Trackers with full trophy upgrades are one of the strongest sustained ranged forces in the game at this point.</div>
+                  <div class="step-title">Use Scorched Earth on enemy zones</div>
+                  <div class="step-desc">At age 18, Signy can burn enemy zones. Military units in burned zones get a 50% attack buff. Use this before major engagements to devastate enemy defenses.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Upgrade Town Hall &amp; key buildings</div>
-                  <div class="step-desc">Upgrade Town Hall for population growth. Also upgrade at least one Dock, one House, and the Archery Range if not done in 802. The population growth speed lore (+25%) compounds well here.</div>
+                  <div class="step-title">Sustain 10+ Skirmishers in warband</div>
+                  <div class="step-desc">Keep Skirmisher Camps upgraded and cycle Krown income into maintaining your warband. Skirmishers with Gungnir's Stealth and Cloaked are extremely difficult to counter.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-body">
-                  <div class="step-title">Place Lynx Traps on enemy-adjacent neutral tiles</div>
-                  <div class="step-desc">Traps placed on unclaimed tiles near enemy borders passively generate trophies and can surprise enemies who push through those tiles. A subtle but effective harassment tool mid-game.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Trophy generation</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Continue feast cycle with teammates</div>
-                  <div class="step-desc">After 200 Fame, each animal kill lowers your next feast cost. Coordinate with your team — if a Stag or Goat player feasts, stockpile food for tile colonization instead. If not, you feast and buff the whole team.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">5</div>
-                <div class="step-body">
-                  <div class="step-title">Use Kaelinn to clear Valkyries &amp; Draugr Tombs</div>
-                  <div class="step-desc">Kaelinn's mobility makes her excellent at taking down high-value neutral camps. If a camp is too strong for her alone, bring one Tracker for support. These camps drop significant resources and lore.</div>
+                  <div class="step-title">Coordinate with team to close out</div>
+                  <div class="step-desc">Snake is a strong mid-game clan. If your team has late-game carries, use Signy's Scorched Earth to weaken enemy positions before your team's final push.</div>
                 </div>
               </div>
             </div>
 
-            <div class="warn">
-              <div class="tip-icon">⚠</div>
-              <p><strong>Watch for axe throwers:</strong> By 803–804, enemy ax throwers become a serious threat — they out-damage your Trackers at range by default. <strong>Rush the movement speed upgrade</strong> for archers so you can kite and reposition groups in combat rather than standing and trading fire.</p>
-            </div>
           </section>
 
           <hr class="section-rule">
@@ -785,53 +721,46 @@
           <section class="year-section" id="y804">
             <div class="year-header">
               <span class="year-badge">Year 804</span>
-              <h2>500 Fame — Oskoreia &amp; Endgame</h2>
+              <h2>Endgame Domination</h2>
             </div>
             <p class="year-goal">
-              Goal: Reach 500 Fame to unlock Mielikki's Oskoreia ability. Summon mythical spirit animals for a devastating final push, or use your scaled Tracker army to close out a Dominion or Fame victory.
+              Goal: Close out with Domination. Snake's stealth mechanics and Signy's full power make them a formidable endgame threat.
             </p>
 
             <div class="build-steps">
               <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-body">
-                  <div class="step-title">Unlock Oskoreia (500 Fame milestone)</div>
-                  <div class="step-desc">Mielikki's 500 Fame bonus unlocks Oskoreia — she recalls the strongest wave of mythical animals your clan has killed. They return in spirit form for one final rampage. This is your endgame spike ability.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">500 Fame</span>
-                  </div>
+                  <div class="step-title">Burn enemy zones before major battles</div>
+                  <div class="step-desc">Use Scorched Earth on enemy zones to give your units a 50% attack buff. Combined with Gungnir's Stealth, your army is devastating in burned zones.</div>
                 </div>
               </div>
               <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-body">
-                  <div class="step-title">Finalize Path of the Hunter upgrades</div>
-                  <div class="step-desc">Spend remaining Hunting Trophies to max out Brundr, Kaelinn, and Tracker upgrades. The final trophy tier unlocks Mythical Lure — attracting the most powerful creatures to your territory for farming.</div>
-                  <div class="step-cost">
-                    <span class="chip chip-trophy">Hunting Trophies</span>
-                  </div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <div class="step-title">Military surge with 14–18 Trackers</div>
-                  <div class="step-desc">A full warband of upgraded Trackers with Fire Arrows and movement speed is capable of overwhelming most compositions. Combine with Oskoreia's spirit animals for a coordinated two-front assault.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <div class="step-title">Push for victory condition</div>
-                  <div class="step-desc">Lynx wins most naturally via Dominion (territory control) or Fame. Keep feasting, keep hunting, and keep your Trackers in the field. A strong Lynx player by year 804 is difficult to stop.</div>
+                  <div class="step-title">Push for Domination Victory</div>
+                  <div class="step-desc">Snake wins via Domination. Use your cloaked army to infiltrate enemy territory and destroy their Town Hall. Signy's full power at age 18 makes this achievable.</div>
                 </div>
               </div>
             </div>
 
-            <div class="tip">
-              <div class="tip-icon">🌿</div>
-              <p><strong>Oskoreia timing:</strong> Save the ability for a decisive moment — either to break an enemy chokepoint or to defend your base during a siege. The spirit animals are powerful but only last one engagement, so don't waste it on a minor skirmish.</p>
+          </section>
+
+          <hr class="section-rule">
+
+          <!-- ── VIDEO GUIDE ────────────────────────────────── -->
+          <section class="video-section" id="video">
+            <div class="video-section-header">
+              <span class="year-badge">Video</span>
+              <h2>Video Guide</h2>
             </div>
+            <div class="video-wrapper">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">▶</div>
+                <p>Video Guide Coming Soon</p>
+              </div>
+            </div>
+            <p class="video-caption">Snake Clan guide — Signy's growth, Skirmisher stealth, and Scorched Earth strategy.</p>
           </section>
 
         </div><!-- /guide-content -->
@@ -839,14 +768,13 @@
     </div><!-- /container -->
   </main>
 
-  <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
   <footer class="main-footer">
     <div class="container">
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="../index.html">Clans</a></li>
-          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../about/index.html">About</a></li>
         </ul>
       </div>
     </div>
